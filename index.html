@@ -125,8 +125,7 @@
             'gjs-plugin-ckeditor': {
                 position: 'center',
                 options: {
-                    language: 'en',
-                    //skin: 'moono-dark',
+                  language: 'en',
                   toolbarGroups: [
                       { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
                       { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
@@ -147,6 +146,44 @@
             }
         }
       });
+
+      let bm = editor.BlockManager;
+      bm.add('paymentDetails', {
+          label: 'Payment Details',
+          //category: opt.categoryLabel,
+          attributes: {class:'gjs-fonts gjs-f-text'},
+          content: {
+              title: 'Insert the iteration here',
+              type: 'text',
+              content: `<span contenteditable="false"><div>
+                           {% for payment in paymentDetails %}
+                               <div>{{ payment.date }}</div>
+                               <div>{{ payment.ref }}</div>
+                               {% else %}
+                               <p> No payment details available against the account number. </p>
+                           {% endfor %}
+                        </div></span>`,
+              style: { padding: '10px' },
+              activeOnRender: 0
+          },
+      });
+
+      bm.add('unEditableText', {
+          label: 'Un-Editable',
+          //category: opt.categoryLabel,
+          attributes: {class:'gjs-fonts gjs-f-text'},
+          content: {
+              title: 'Insert the iteration here',
+              type: 'text',
+              content: `<span contenteditable="false">If there are any mistakes
+                       or changes required to the above please
+                       contact us as soon as possible on</span> {{CALLCENTRENUMBER}} <span contenteditable="false">
+                       and quote your reference which is {{CUSTOMERREF}}. You can also contact us via our website at <OURWEBSITE> particularly if you should have a change of address or contact phone numbers during the term of your contract.</span>`,
+              style: { padding: '10px' },
+              //activeOnRender: 1
+          },
+      });
+
     </script>
   </body>
 </html>
