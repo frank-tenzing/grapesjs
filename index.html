@@ -8,8 +8,13 @@
     <script src="dist/grapes.js"></script>
     <script src="dist/grapesjs-blocks-basic.min.js"></script>
     <!-- <script src="https://unpkg.com/grapesjs"></script> -->
+
+    <script src="node_modules/ckeditor/ckeditor.js"></script>
+    <script src="./dist/grapesjs-plugin-ckeditor.min.js"></script>
+
     <script src="dist/grapesjs-plugin.js"></script>
     <script src="src/ckeditor/index.js"></script>
+
     <style>
       body,
       html {
@@ -115,8 +120,31 @@
             }
           ],
         },
-        plugins: ['gjs-blocks-basic'],
+        plugins: ['gjs-blocks-basic', 'gjs-plugin-ckeditor'],
         pluginsOpts: {
+            'gjs-plugin-ckeditor': {
+                position: 'center',
+                options: {
+                    language: 'en',
+                    //skin: 'moono-dark',
+                  toolbarGroups: [
+                      { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
+                      { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+                      { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+                      { name: 'forms' },
+                      '/',
+                      { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                      { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+                      { name: 'links' },
+                      { name: 'insert' },
+                      '/',
+                      { name: 'styles' },
+                      { name: 'colors' },
+                      { name: 'tools' },
+                      { name: 'others' },
+                  ],
+                }
+            }
         }
       });
     </script>
