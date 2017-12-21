@@ -1,6 +1,7 @@
 module.exports = {
 
   blocks: [
+    // Collection Iterations
     {
       id:'payment-details', 
       category: 'Iterations', 
@@ -16,6 +17,7 @@ module.exports = {
     </div></span>`, 
       attributes: {}
     },
+    // Un-Editable Blocks
     {
       id: 'unEditableText', 
       label: 'Un-Editable',
@@ -27,11 +29,79 @@ module.exports = {
       particularly if you should have a change of address or contact phone numbers during the term of your contract.</span>`,
       attributes: {class:'gjs-fonts gjs-f-text'},
     },
+    // Default Blocks
     {
-      id:'h1-block', 
-      category: 'Featured',
-      label: 'Heading', 
-      content:'<h1>...</h1>'
+      id: 'sect100', 
+      category: 'Default',
+      label: '1 Section',
+      content: `<table>
+        <tr>
+          <td></td>
+        </tr>
+        </table>`,
+      attributes: {class:'gjs-fonts gjs-f-b1'},
+    },
+    {
+      id: 'sect50', 
+      category: 'Default',
+      label: '1/2 Section',
+      content: `<table>
+        <tr>
+          <td style="width: 50%"></td>
+          <td style="width: 50%"></td>
+        </tr>
+        </table>`,
+      attributes: {class:'gjs-fonts gjs-f-b1'},
+    },
+    {
+      id: 'sect30', 
+      label: '1/3 Section',
+      category: 'Default',
+      attributes: {class:'gjs-fonts gjs-f-b3'},
+      content: `<table>
+        <tr>
+          <td style="width: 33.3333%"></td>
+          <td style="width: 33.3333%"></td>
+          <td style="width: 33.3333%"></td>
+        </tr>
+        </table>`,
+    },
+    {
+      id: 'button',
+      label: 'Button',
+      category: 'Default',
+      content: '<a class="button">Button</a>',
+      attributes: {class:'gjs-fonts gjs-f-button'}
+    },
+    {
+      id: 'text',
+      label: 'Text',
+      category: 'Default',
+      attributes: {class:'gjs-fonts gjs-f-text'},
+      content: {
+       type: 'text',
+       content: 'Insert your text here',
+       style: { padding: '10px' },
+       activeOnRender: 1
+      },
+    },
+    {
+      id: 'text-sect',
+      label: 'Text Section',
+      category: 'Default',
+      content: '<h1 class="heading">Insert title here</h1><p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>',
+      attributes: {class:'gjs-fonts gjs-f-h1p'}
+    },
+    {
+      id: 'image',
+      label: 'Image',
+      category: 'Default',
+      attributes: {class:'gjs-fonts gjs-f-image'},
+      content: {
+        type:'image',
+        style: {color:'black'},
+        activeOnRender: 1
+      },
     }
   ],
 
