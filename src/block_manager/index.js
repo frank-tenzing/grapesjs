@@ -53,10 +53,13 @@ module.exports = () => {
        * @private
        */
       init(config) {
+        console.log("init method in index.js")
         c = config || {};
         const em = c.em;
 
         for (let name in defaults) {
+          console.log("index.js in block manager")
+          console.log(name);
           if (!(name in c)) {
             c[name] = defaults[name];
           }
@@ -215,7 +218,10 @@ module.exports = () => {
        * blockManager.render();
        */
       render(blocks) {
+        console.log("render in block manager");
+        console.log(blocks)
         const toRender = blocks || this.getAll().models;
+        console.log(toRender);
 
         if (!blocksView.rendered) {
           blocksView.render();
