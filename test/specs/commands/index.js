@@ -49,6 +49,8 @@ describe('Commands', () => {
       expect(obj.get('preview')).toNotEqual(null);
       expect(obj.get('resize')).toNotEqual(null);
       expect(obj.get('drag')).toNotEqual(null);
+      expect(obj.get('new-merge-tag')).toNotEqual(null);
+      expect(obj.get('new-iteration')).toNotEqual(null);
     });
 
     it('Default commands after loadDefaultCommands', () => {

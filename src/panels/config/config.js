@@ -8,6 +8,8 @@ var ola = 'open-layers';
 var obl = 'open-blocks';
 var ful = 'fullscreen';
 var prv = 'preview';
+var nmt = 'new-merge-tag';
+var nci = "new-iteration";
 
 module.exports = {
   stylePrefix: 'pn-',
@@ -25,6 +27,18 @@ module.exports = {
       command: swv,
       context: swv,
       attributes: { title: 'View components' },
+    },{
+      id: nmt,
+      className: 'fa fa-eye',
+      command: nmt,
+      context: nmt,
+      attributes: { title: 'New Merge Tag' },
+    },{
+      id: nci,
+      className: 'fa fa-eye',
+      command: nci,
+      context: nci,
+      attributes: { title: 'New Iteration' },
     },{
       id: prv,
       className: 'fa fa-eye',

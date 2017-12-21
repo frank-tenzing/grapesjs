@@ -111,6 +111,8 @@ module.exports = () => {
       defaultCommands.preview = require('./view/Preview');
       defaultCommands.resize = require('./view/Resize');
       defaultCommands.drag = require('./view/Drag');
+      defaultCommands['new-merge-tag'] = require('./view/NewMergeTag');
+      defaultCommands['new-iteration'] = require('./view/NewIteration');
 
       defaultCommands['tlb-delete'] = {
         run(ed) {
