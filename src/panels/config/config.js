@@ -55,7 +55,7 @@ module.exports = {
       id: expt,
       className: 'fa fa-code',
       command: expt,
-      attributes: { title: 'View code' },
+      attributes: { title: 'View and export code' },
     }],
   },{
     id: 'views',
