@@ -46,7 +46,7 @@ module.exports = {
     let fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.setAttribute("id", "fileInput");
-    fileInput.setAttribute("onchange", function () { alert("onchange") });
+    // fileInput.setAttribute("onchange", function () { alert("onchange") });
     container.appendChild(fileInput);
 
     return container;
@@ -62,8 +62,7 @@ module.exports = {
     btn.className = pfx + 'btn-prim ' + pfx + 'btn-import';
     btn.onclick = () => {
       try {
-        alert("Import template");
-        if (this.checkFileAPI) {
+        if (this.checkFileAPI()) {
           this.readText();
         } else {
           alert('The File APIs are not fully supported by your browser. Fallback required.');
@@ -85,27 +84,17 @@ module.exports = {
 
     let fileInput = document.getElementById('fileInput');
 
-    fileInput.addEventListener('change', function (e) {
-      let file = fileInput.files[0];
+    let file = fileInput.files[0];
 
-      var reader = new FileReader();
+    var reader = new FileReader();
 
-      reader.onload = function (e) {
-        let result = reader.result;
-        console.log("reading result");
-        console.log(result);
-      }
+    reader.onload = function (e) {
+      let result = reader.result;
+      console.log("reading result");
+      console.log(result);
+    }
 
-      let res = reader.readAsText(file);
-      console.log(res);
-
-    });
-
-
-    // let result = reader.readAsText(file);
-
-
-
+    reader.readAsText(file);
   },
 
   checkFileAPI() {
