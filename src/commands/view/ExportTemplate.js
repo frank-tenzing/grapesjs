@@ -27,6 +27,8 @@ module.exports = {
 
     modal.setTitle(config.textViewCode);
     modal.setContent(this.$editors);
+    console.log("modal ...");
+    console.log(modal);
     modal.open();
     this.htmlEditor.setContent(editor.getHtml());
     this.cssEditor.setContent(editor.getCss());
