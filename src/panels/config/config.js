@@ -1,7 +1,11 @@
+/*
+Config of Panels
+*/
 var crc = 'create-comp';
 var mvc = 'move-comp';
-var swv = 'sw-visibility';
+var swv = 'sw-visibility';
 var expt = 'export-template';
+var impt = 'import-template';
 var osm = 'open-sm';
 var otm = 'open-tm';
 var ola = 'open-layers';
@@ -18,7 +22,7 @@ module.exports = {
   defaults: [{
     id: 'commands',
     buttons: [{}],
-  },{
+  }, {
     id: 'options',
     buttons: [{
       active: true,
@@ -27,65 +31,70 @@ module.exports = {
       command: swv,
       context: swv,
       attributes: { title: 'View components' },
-    },{
+    }, {
       id: nmt,
-      className: 'fa fa-eye',
+      className: 'fa fa-pencil',
       command: nmt,
       context: nmt,
       attributes: { title: 'New Merge Tag' },
-    },{
+    }, {
       id: nci,
-      className: 'fa fa-eye',
+      className: 'fa fa-pencil',
       command: nci,
       context: nci,
       attributes: { title: 'New Iteration' },
-    },{
+    }, {
       id: prv,
       className: 'fa fa-eye',
       command: prv,
       context: prv,
       attributes: { title: 'Preview' },
-    },{
+    }, {
       id: ful,
       className: 'fa fa-arrows-alt',
       command: ful,
       context: ful,
       attributes: { title: 'Fullscreen' },
-    },{
+    }, {
       id: expt,
-      className: 'fa fa-code',
+      className: 'fa fa-download',
       command: expt,
-      attributes: { title: 'View and export code' },
+      attributes: { title: 'View and export template code' },
+    }, {
+      id: impt,
+      className: 'fa fa-upload',
+      command: impt,
+      attributes: { title: 'Import template' },
     }],
-  },{
+  }, {
     id: 'views',
-    buttons  : [{
+    buttons: [{
       id: osm,
       className: 'fa fa-paint-brush',
       command: osm,
       active: true,
       attributes: { title: 'Open Style Manager' },
-    },{
+    }, {
       id: otm,
       className: 'fa fa-cog',
       command: otm,
       attributes: { title: 'Settings' },
-    },{
+    }, {
       id: ola,
       className: 'fa fa-bars',
       command: ola,
-      attributes  : { title: 'Open Layer Manager' },
-    },{
+      attributes: { title: 'Open Layer Manager' },
+    }, {
       id: obl,
       className: 'fa fa-th-large',
       command: obl,
-      attributes  : { title: 'Open Blocks' },
+      attributes: { title: 'Open Blocks' },
     }],
   }],
 
   // Editor model
-  em : null,
+  em: null,
 
   // Delay before show children buttons (in milliseconds)
-  delayBtnsShow  : 300,
+  delayBtnsShow: 300,
 };
