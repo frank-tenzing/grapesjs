@@ -6,6 +6,7 @@ var mvc = 'move-comp';
 var swv = 'sw-visibility';
 var expt = 'export-template';
 var impt = 'import-template';
+var testMail = 'send-test-mail';
 var osm = 'open-sm';
 var otm = 'open-tm';
 var ola = 'open-layers';
@@ -65,6 +66,11 @@ module.exports = {
       className: 'fa fa-upload',
       command: impt,
       attributes: { title: 'Import template' },
+    }, {
+      id: testMail,
+      className: 'fa fa-paper-plane',
+      command: testMail,
+      attributes: { title: 'Sending test Email' },
     }],
   }, {
     id: 'views',

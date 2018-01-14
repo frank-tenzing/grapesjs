@@ -34,6 +34,8 @@ describe('Commands', () => {
       expect(obj.get('text-comp')).toNotEqual(null);
       expect(obj.get('insert-custom')).toNotEqual(null);
       expect(obj.get('export-template')).toNotEqual(null);
+      expect(obj.get('import-template')).toNotEqual(null);
+      expect(obj.get('send-test-mail')).toNotEqual(null);
       expect(obj.get('sw-visibility')).toNotEqual(null);
       expect(obj.get('open-layers')).toNotEqual(null);
       expect(obj.get('open-sm')).toNotEqual(null);

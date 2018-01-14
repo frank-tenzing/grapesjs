@@ -92,6 +92,7 @@ module.exports = () => {
 
       const ViewCode = require('./view/ExportTemplate');
       const ImptCode = require('./view/ImportTemplate');
+      const SendTestMail = require('./view/SendTestMail');
       defaultCommands['select-comp'] = require('./view/SelectComponent');
       defaultCommands['create-comp'] = require('./view/CreateComponent');
       defaultCommands['delete-comp'] = require('./view/DeleteComponent');
@@ -101,6 +102,7 @@ module.exports = () => {
       defaultCommands['insert-custom'] = require('./view/InsertCustom');
       defaultCommands['export-template'] = ViewCode;
       defaultCommands['import-template'] = ImptCode;
+      defaultCommands['send-test-mail'] = SendTestMail;
       defaultCommands['sw-visibility'] = require('./view/SwitchVisibility');
       defaultCommands['open-layers'] = require('./view/OpenLayers');
       defaultCommands['open-sm'] = require('./view/OpenStyleManager');
