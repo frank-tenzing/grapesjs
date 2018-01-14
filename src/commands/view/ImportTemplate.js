@@ -21,7 +21,7 @@ module.exports = {
 
       const $editors = $(`<div class="${pfx}export-dl"></div>`);
       // Build the export button
-      const importBtn = this.buildButton("Import");
+      const importBtn = this.buildButton("Import", editor);
       $editors.append(dialog).append(importBtn);
       this.$editors = $editors;
     }
@@ -53,7 +53,7 @@ module.exports = {
 
   },
 
-  buildButton(label) {
+  buildButton(label, editor) {
     let pfx = editor.getConfig().stylePrefix;
     let modal = editor.Modal;
 
@@ -63,7 +63,7 @@ module.exports = {
     btn.onclick = () => {
       try {
         if (this.checkFileAPI()) {
-          this.readText();
+          this.readText(editor);
         } else {
           alert('The File APIs are not fully supported by your browser. Fallback required.');
         }
@@ -80,7 +80,7 @@ module.exports = {
   /*
   Read the content of the template
   */
-  readText() {
+  readText(editor) {
 
     let fileInput = document.getElementById('fileInput');
 
@@ -92,6 +92,10 @@ module.exports = {
       let result = reader.result;
       console.log("reading result");
       console.log(result);
+
+      editor.DomComponents.getWrapper().set('content', '');
+      editor.setComponents(result);
+      editor.Modal.close();
     }
 
     reader.readAsText(file);

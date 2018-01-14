@@ -61,7 +61,7 @@ module.exports = {
   buildButton(label, htmlContent, cssContent) {
     let pfx = editor.getConfig().stylePrefix;
     let modal = editor.Modal;
-    let code = htmlContent + "\n" + cssContent;
+    let code = htmlContent + "\n" + "<style>\n" + cssContent + "\n</style>";
 
     let btn = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
     btn.innerHTML = label; // 'Add the merge tag'
