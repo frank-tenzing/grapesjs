@@ -38,6 +38,17 @@ const defActions = {
       title: 'Link',
     },
     result: (rte) => rte.insertHTML(`<a class="link" href="">${rte.selection()}</a>`)
+  },
+  mergefields: {
+    icon: `<select class="gjs-field">
+		          <option value="">- Select -</option>
+              <option value="{{firstname}}">FirstName</option>
+              <option value="{{lastname}}">LastName</option>
+              <option value="{{age}}">Age</option>
+            </select>`,
+    event: 'change',
+    result: (rte, action) => rte.insertHTML(action.btn.firstChild.value),
+    update: (rte, action) => { action.btn.firstChild.value = "";}
   }
 }
 
