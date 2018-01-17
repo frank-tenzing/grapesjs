@@ -6,7 +6,8 @@ module.exports = {
       id:'payment-details', 
       category: 'Iterations', 
       label: 'Payment Details', 
-      content:`<span contenteditable="false"><div>
+      // The `id` will tell the service what data will replace the merge fields
+      content:`<span contenteditable="false" id="payment"><div>
     {% for payment in paymentDetails %}
         <div>{{ payment.date }}</div>
         <div>{{ payment.account }}</div>
@@ -15,7 +16,7 @@ module.exports = {
         <p> No payment details available against the account number. </p>
     {% endfor %}
     </div></span>`, 
-      attributes: {}
+      attributes: {class:'gjs-fonts gjs-f-text'}
     },
     // Un-Editable Blocks
     {
