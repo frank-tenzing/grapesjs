@@ -80,20 +80,21 @@ const defActions = {
     result: (rte) => rte.insertHTML(`<a class="link" href="">${rte.selection()}</a>`)
   },
   mergefields: {
-    icon: `<select class="gjs-field" style="font-size:1.0rem;padding:0 4px 2px;">
-		          <option value="" style="color:white;" disabled>- {{Merge Fields}} -</option>
-              <option value="{{first_name}}">FirstName</option>
-              <option value="{{last_name}}">LastName</option>
-              <option value="{{age}}">Age</option>
-              <option value="{{email}}">E-mail</option>
-              <option value="{{phone}}">Phone</option>
-              <option value="{{address_line_1}}">Address Line 1</option>
-              <option value="{{address_line_2}}">Address Line 2</option>
+    icon: `<select>
+		          <option value="" disabled>- {{Merge Fields}} -</option>
+              <option style="color:black;" value="{{first_name}}">FirstName</option>
+              <option style="color:black;" value="{{last_name}}">LastName</option>
+              <option style="color:black;" value="{{age}}">Age</option>
+              <option style="color:black;" value="{{email}}">E-mail</option>
+              <option style="color:black;" value="{{phone}}">Phone</option>
+              <option style="color:black;" value="{{address_line_1}}">Address Line 1</option>
+              <option style="color:black;" value="{{address_line_2}}">Address Line 2</option>
             </select>`,
     name: 'mergefields',
     attributes: {
       id: "merge_fields",
-      // style: 'font-size:1.4rem;padding:0 4px 2px;',
+      class: "gjs-field",
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
       title: 'Merge Fields'
     },
     event: 'change',
