@@ -14,7 +14,8 @@
  * @module RichTextEditor
  */
 import RichTextEditor from './model/RichTextEditor';
-import {on, off} from 'utils/mixins'
+import {on, off} from 'utils/mixins';
+
 
 module.exports = () => {
   let config = {};
