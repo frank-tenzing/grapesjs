@@ -1,7 +1,7 @@
 // The initial version of this RTE was borrowed from https://github.com/jaredreich/pell
 // and adapted to the GrapesJS's need
 
-import {on, off} from 'utils/mixins'
+import { on, off } from 'utils/mixins'
 
 const RTE_KEY = '_rte';
 
@@ -9,26 +9,66 @@ const defActions = {
   bold: {
     name: 'bold',
     icon: '<b>B</b>',
-    attributes: {title: 'Bold'},
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Bold'
+    },
     result: (rte) => rte.exec('bold')
   },
   italic: {
     name: 'italic',
     icon: '<i>I</i>',
-    attributes: {title: 'Italic'},
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Italic'
+    },
     result: (rte) => rte.exec('italic')
   },
   underline: {
     name: 'underline',
     icon: '<u>U</u>',
-    attributes: {title: 'Underline'},
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Underline'
+    },
     result: (rte) => rte.exec('underline')
   },
   strikethrough: {
     name: 'strikethrough',
     icon: '<strike>S</strike>',
-    attributes: {title: 'Strike-through'},
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Strike-through'
+    },
     result: (rte) => rte.exec('strikeThrough')
+  },
+  olist: {
+    name: 'olist',
+    icon: '&#35;',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Ordered List'
+    },
+    result: (rte) => rte.exec('insertOrderedList')
+  },
+  ulist: {
+    name: 'ulist',
+    icon: '&#8226;',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Unordered List'
+    },
+    result: (rte) => rte.exec('insertUnorderedList')
+  },
+  line: {
+    name: 'line',
+    icon: '&#8213;',
+    title: 'Horizontal Line',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Horizontal Line'
+    },
+    result: (rte) => rte.exec('insertHorizontalRule')
   },
   link: {
     icon: `<span style="transform:rotate(45deg)">&supdsub;</span>`,
@@ -41,14 +81,19 @@ const defActions = {
   },
   mergefields: {
     icon: `<select class="gjs-field">
-		          <option value="">- Select -</option>
+		          <option value="" disabled>- Select -</option>
               <option value="{{firstname}}">FirstName</option>
               <option value="{{lastname}}">LastName</option>
               <option value="{{age}}">Age</option>
             </select>`,
+    name: 'mergefields',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Merge Fields'
+    },
     event: 'change',
     result: (rte, action) => rte.insertHTML(action.btn.firstChild.value),
-    update: (rte, action) => { action.btn.firstChild.value = "";}
+    update: (rte, action) => { action.btn.firstChild.value = ""; }
   }
 }
 
@@ -67,21 +112,23 @@ export default class RichTextEditor {
 
     const settAct = settings.actions || [];
     settAct.forEach((action, i) => {
-        if (typeof action === 'string') {
-          action = defActions[action];
-        } else if (defActions[action.name]) {
-          action = {...defActions[action.name], ...action};
-        }
-        settAct[i] = action;
+      if (typeof action === 'string') {
+        action = defActions[action];
+      } else if (defActions[action.name]) {
+        action = { ...defActions[action.name], ...action };
+      }
+      settAct[i] = action;
     });
     const actions = settAct.length ? settAct :
       Object.keys(defActions).map(action => defActions[action])
 
-    settings.classes = { ...{
-      actionbar: 'actionbar',
-      button: 'action',
-      active: 'active',
-    }, ...settings.classes};
+    settings.classes = {
+      ...{
+        actionbar: 'actionbar',
+        button: 'action',
+        active: 'active',
+      }, ...settings.classes
+    };
 
     const classes = settings.classes;
     let actionbar = settings.actionbar;
