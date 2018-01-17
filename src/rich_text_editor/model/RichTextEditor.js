@@ -71,7 +71,7 @@ const defActions = {
     result: (rte) => rte.exec('insertHorizontalRule')
   },
   link: {
-    icon: `<span style="transform:rotate(45deg)">&supdsub;</span>`,
+    icon: `<span>&supdsub;</span>`,
     name: 'link',
     attributes: {
       style: 'font-size:1.4rem;padding:0 4px 2px;',
@@ -80,15 +80,20 @@ const defActions = {
     result: (rte) => rte.insertHTML(`<a class="link" href="">${rte.selection()}</a>`)
   },
   mergefields: {
-    icon: `<select class="gjs-field">
-		          <option value="" disabled>- Select -</option>
-              <option value="{{firstname}}">FirstName</option>
-              <option value="{{lastname}}">LastName</option>
+    icon: `<select class="gjs-field" style="font-size:1.0rem;padding:0 4px 2px;">
+		          <option value="" disabled>- {{Merge Fields}} -</option>
+              <option value="{{first_name}}">FirstName</option>
+              <option value="{{last_name}}">LastName</option>
               <option value="{{age}}">Age</option>
+              <option value="{{email}}">E-mail</option>
+              <option value="{{phone}}">Phone</option>
+              <option value="{{address_line_1}}">Address Line 1</option>
+              <option value="{{address_line_2}}">Address Line 2</option>
             </select>`,
     name: 'mergefields',
     attributes: {
-      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      id: "merge_fields",
+      // style: 'font-size:1.4rem;padding:0 4px 2px;',
       title: 'Merge Fields'
     },
     event: 'change',
