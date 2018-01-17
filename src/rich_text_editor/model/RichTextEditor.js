@@ -81,7 +81,7 @@ const defActions = {
   },
   mergefields: {
     icon: `<select class="gjs-field" style="font-size:1.0rem;padding:0 4px 2px;">
-		          <option value="" disabled>- {{Merge Fields}} -</option>
+		          <option value="" style="color:white;" disabled>- {{Merge Fields}} -</option>
               <option value="{{first_name}}">FirstName</option>
               <option value="{{last_name}}">LastName</option>
               <option value="{{age}}">Age</option>
