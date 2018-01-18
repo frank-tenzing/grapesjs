@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 58);
+/******/ 	return __webpack_require__(__webpack_require__.s = 59);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -3704,7 +3704,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Backbone = __webpack_require__(0);
 var Components = __webpack_require__(49);
 var Selectors = __webpack_require__(10);
-var Traits = __webpack_require__(148);
+var Traits = __webpack_require__(149);
 
 var escapeRegExp = function escapeRegExp(str) {
   return str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&');
@@ -16181,7 +16181,7 @@ var Property = __webpack_require__(12);
 module.exports = __webpack_require__(0).Collection.extend(_TypeableCollection2.default).extend({
   types: [{
     id: 'stack',
-    model: __webpack_require__(117),
+    model: __webpack_require__(118),
     view: __webpack_require__(34),
     isType: function isType(value) {
       if (value && value.type == 'stack') {
@@ -16235,8 +16235,8 @@ module.exports = __webpack_require__(0).Collection.extend(_TypeableCollection2.d
     }
   }, {
     id: 'slider',
-    model: __webpack_require__(123),
-    view: __webpack_require__(124),
+    model: __webpack_require__(124),
+    view: __webpack_require__(125),
     isType: function isType(value) {
       if (value && value.type == 'slider') {
         return value;
@@ -17577,8 +17577,8 @@ var _underscore = __webpack_require__(1);
 
 var _mixins = __webpack_require__(2);
 
-var ToolbarView = __webpack_require__(184);
-var Toolbar = __webpack_require__(186);
+var ToolbarView = __webpack_require__(189);
+var Toolbar = __webpack_require__(191);
 var key = __webpack_require__(17);
 var Backbone = __webpack_require__(0);
 var showOffsets = void 0;
@@ -18202,7 +18202,7 @@ module.exports = {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Backbone, _) {
 
-var SelectPosition = __webpack_require__(53);
+var SelectPosition = __webpack_require__(54);
 var $ = Backbone.$;
 
 module.exports = _.extend({}, SelectPosition, {
@@ -18447,7 +18447,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _promisePolyfill = __webpack_require__(73);
+var _promisePolyfill = __webpack_require__(74);
 
 var _promisePolyfill2 = _interopRequireDefault(_promisePolyfill);
 
@@ -19606,7 +19606,7 @@ module.exports = Backbone.Model.extend({
 
 
 var Backbone = __webpack_require__(0);
-var Button = __webpack_require__(107);
+var Button = __webpack_require__(108);
 
 module.exports = Backbone.Collection.extend({
 
@@ -19795,7 +19795,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */(function(_) {
 
 var Backbone = __webpack_require__(0);
-var ButtonView = __webpack_require__(109);
+var ButtonView = __webpack_require__(110);
 
 module.exports = Backbone.View.extend({
   initialize: function initialize(o) {
@@ -19912,10 +19912,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
  */
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(114),
-      Sectors = __webpack_require__(115),
+      defaults = __webpack_require__(115),
+      Sectors = __webpack_require__(116),
       Properties = __webpack_require__(11),
-      SectorsView = __webpack_require__(126);
+      SectorsView = __webpack_require__(127);
   var properties = void 0;
   var sectors, SectView;
 
@@ -20483,7 +20483,7 @@ module.exports = Property.extend({
 
 
 var PropertyCompositeView = __webpack_require__(18);
-var LayersView = __webpack_require__(121);
+var LayersView = __webpack_require__(122);
 
 module.exports = PropertyCompositeView.extend({
   templateInput: function templateInput() {
@@ -20901,7 +20901,7 @@ module.exports = __webpack_require__(14).extend({
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Backbone) {
 
-__webpack_require__(120);
+__webpack_require__(121);
 var Input = __webpack_require__(35);
 var $ = Backbone.$;
 
@@ -21746,139 +21746,139 @@ var Selectors = __webpack_require__(10);
 
 module.exports = Backbone.Model.extend(_Styleable2.default).extend({
 
-  defaults: {
-    // Css selectors
-    selectors: {},
+    defaults: {
+        // Css selectors
+        selectors: {},
 
-    // Additional string css selectors
-    selectorsAdd: '',
+        // Additional string css selectors
+        selectorsAdd: '',
 
-    // Css properties style
-    style: {},
+        // Css properties style
+        style: {},
 
-    // On which device width this rule should be rendered, eg. @media (max-width: 1000px)
-    mediaText: '',
+        // On which device width this rule should be rendered, eg. @media (max-width: 1000px)
+        mediaText: '',
 
-    // State of the rule, eg: hover | pressed | focused
-    state: '',
+        // State of the rule, eg: hover | pressed | focused
+        state: '',
 
-    // Indicates if the rule is stylable
-    stylable: true,
+        // Indicates if the rule is stylable
+        stylable: true,
 
-    // If true, sets '!important' on all properties
-    // You can use an array to specify properties to set important
-    // Used in view
-    important: 0
-  },
+        // If true, sets '!important' on all properties
+        // You can use an array to specify properties to set important
+        // Used in view
+        important: 0
+    },
 
-  initialize: function initialize(c) {
-    var opt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    initialize: function initialize(c) {
+        var opt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-    this.config = c || {};
-    var em = opt.em;
-    var selectors = this.config.selectors || [];
-    this.em = em;
+        this.config = c || {};
+        var em = opt.em;
+        var selectors = this.config.selectors || [];
+        this.em = em;
 
-    if (em) {
-      var sm = em.get('SelectorManager');
-      var slct = [];
-      selectors.forEach(function (selector) {
-        slct.push(sm.add(selector));
-      });
-      selectors = slct;
+        if (em) {
+            var sm = em.get('SelectorManager');
+            var slct = [];
+            selectors.forEach(function (selector) {
+                slct.push(sm.add(selector));
+            });
+            selectors = slct;
+        }
+
+        this.set('selectors', new Selectors(selectors));
+    },
+
+
+    /**
+     * Return selectors fo the rule as a string
+     * @return {string}
+     */
+    selectorsToString: function selectorsToString() {
+        var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        var result = [];
+        var state = this.get('state');
+        var addSelector = this.get('selectorsAdd');
+        var selectors = this.get('selectors').getFullString();
+        var stateStr = state ? ':' + state : '';
+        selectors && result.push('' + selectors + stateStr);
+        addSelector && !opts.skipAdd && result.push(addSelector);
+        return result.join(', ');
+    },
+
+
+    /**
+     * Returns CSS string of the rule
+     * @param {Object} [opts={}] Options
+     * @return {string}
+     */
+    toCSS: function toCSS() {
+        var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        var result = '';
+        var media = this.get('mediaText');
+        var style = this.styleToString(opts);
+        var selectors = this.selectorsToString();
+
+        if (selectors && style) {
+            result = selectors + '{' + style + '}';
+        }
+
+        if (media && result) {
+            result = '@media ' + media + '{' + result + '}';
+        }
+
+        return result;
+    },
+
+
+    /**
+     * Compare the actual model with parameters
+     * @param   {Object} selectors Collection of selectors
+     * @param   {String} state Css rule state
+     * @param   {String} width For which device this style is oriented
+     * @param {Object} ruleProps Other rule props
+     * @return  {Boolean}
+     * @private
+     */
+    compare: function compare(selectors, state, width, ruleProps) {
+        var otherRule = ruleProps || {};
+        var st = state || '';
+        var wd = width || '';
+        var selectorsAdd = otherRule.selectorsAdd || '';
+        var cId = 'cid';
+        //var a1 = _.pluck(selectors.models || selectors, cId);
+        //var a2 = _.pluck(this.get('selectors').models, cId);
+        if (!(selectors instanceof Array) && !selectors.models) selectors = [selectors];
+        var a1 = _.map(selectors.models || selectors, function (model) {
+            return model.get('name');
+        });
+        var a2 = _.map(this.get('selectors').models, function (model) {
+            return model.get('name');
+        });
+        var f = false;
+
+        if (a1.length !== a2.length) return f;
+
+        for (var i = 0; i < a1.length; i++) {
+            var re = 0;
+            for (var j = 0; j < a2.length; j++) {
+                if (a1[i] === a2[j]) re = 1;
+            }
+            if (re === 0) return f;
+        }
+
+        if (this.get('state') !== st) return f;
+
+        if (this.get('mediaText') !== wd) return f;
+
+        if (this.get('selectorsAdd') !== selectorsAdd) return f;
+
+        return true;
     }
-
-    this.set('selectors', new Selectors(selectors));
-  },
-
-
-  /**
-   * Return selectors fo the rule as a string
-   * @return {string}
-   */
-  selectorsToString: function selectorsToString() {
-    var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    var result = [];
-    var state = this.get('state');
-    var addSelector = this.get('selectorsAdd');
-    var selectors = this.get('selectors').getFullString();
-    var stateStr = state ? ':' + state : '';
-    selectors && result.push('' + selectors + stateStr);
-    addSelector && !opts.skipAdd && result.push(addSelector);
-    return result.join(', ');
-  },
-
-
-  /**
-   * Returns CSS string of the rule
-   * @param {Object} [opts={}] Options
-   * @return {string}
-   */
-  toCSS: function toCSS() {
-    var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    var result = '';
-    var media = this.get('mediaText');
-    var style = this.styleToString(opts);
-    var selectors = this.selectorsToString();
-
-    if (selectors && style) {
-      result = selectors + '{' + style + '}';
-    }
-
-    if (media && result) {
-      result = '@media ' + media + '{' + result + '}';
-    }
-
-    return result;
-  },
-
-
-  /**
-   * Compare the actual model with parameters
-   * @param   {Object} selectors Collection of selectors
-   * @param   {String} state Css rule state
-   * @param   {String} width For which device this style is oriented
-   * @param {Object} ruleProps Other rule props
-   * @return  {Boolean}
-   * @private
-   */
-  compare: function compare(selectors, state, width, ruleProps) {
-    var otherRule = ruleProps || {};
-    var st = state || '';
-    var wd = width || '';
-    var selectorsAdd = otherRule.selectorsAdd || '';
-    var cId = 'cid';
-    //var a1 = _.pluck(selectors.models || selectors, cId);
-    //var a2 = _.pluck(this.get('selectors').models, cId);
-    if (!(selectors instanceof Array) && !selectors.models) selectors = [selectors];
-    var a1 = _.map(selectors.models || selectors, function (model) {
-      return model.get('name');
-    });
-    var a2 = _.map(this.get('selectors').models, function (model) {
-      return model.get('name');
-    });
-    var f = false;
-
-    if (a1.length !== a2.length) return f;
-
-    for (var i = 0; i < a1.length; i++) {
-      var re = 0;
-      for (var j = 0; j < a2.length; j++) {
-        if (a1[i] === a2[j]) re = 1;
-      }
-      if (re === 0) return f;
-    }
-
-    if (this.get('state') !== st) return f;
-
-    if (this.get('mediaText') !== wd) return f;
-
-    if (this.get('selectorsAdd') !== selectorsAdd) return f;
-
-    return true;
-  }
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
@@ -22458,6 +22458,201 @@ module.exports = ComponentView.extend({
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var __WEBPACK_AMD_DEFINE_RESULT__;/* FileSaver.js
+ * A saveAs() FileSaver implementation.
+ * 1.3.2
+ * 2016-06-16 18:25:19
+ *
+ * By Eli Grey, http://eligrey.com
+ * License: MIT
+ *   See https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
+ */
+
+/*global self */
+/*jslint bitwise: true, indent: 4, laxbreak: true, laxcomma: true, smarttabs: true, plusplus: true */
+
+/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
+
+var saveAs = saveAs || (function(view) {
+	"use strict";
+	// IE <10 is explicitly unsupported
+	if (typeof view === "undefined" || typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
+		return;
+	}
+	var
+		  doc = view.document
+		  // only get URL when necessary in case Blob.js hasn't overridden it yet
+		, get_URL = function() {
+			return view.URL || view.webkitURL || view;
+		}
+		, save_link = doc.createElementNS("http://www.w3.org/1999/xhtml", "a")
+		, can_use_save_link = "download" in save_link
+		, click = function(node) {
+			var event = new MouseEvent("click");
+			node.dispatchEvent(event);
+		}
+		, is_safari = /constructor/i.test(view.HTMLElement) || view.safari
+		, is_chrome_ios =/CriOS\/[\d]+/.test(navigator.userAgent)
+		, throw_outside = function(ex) {
+			(view.setImmediate || view.setTimeout)(function() {
+				throw ex;
+			}, 0);
+		}
+		, force_saveable_type = "application/octet-stream"
+		// the Blob API is fundamentally broken as there is no "downloadfinished" event to subscribe to
+		, arbitrary_revoke_timeout = 1000 * 40 // in ms
+		, revoke = function(file) {
+			var revoker = function() {
+				if (typeof file === "string") { // file is an object URL
+					get_URL().revokeObjectURL(file);
+				} else { // file is a File
+					file.remove();
+				}
+			};
+			setTimeout(revoker, arbitrary_revoke_timeout);
+		}
+		, dispatch = function(filesaver, event_types, event) {
+			event_types = [].concat(event_types);
+			var i = event_types.length;
+			while (i--) {
+				var listener = filesaver["on" + event_types[i]];
+				if (typeof listener === "function") {
+					try {
+						listener.call(filesaver, event || filesaver);
+					} catch (ex) {
+						throw_outside(ex);
+					}
+				}
+			}
+		}
+		, auto_bom = function(blob) {
+			// prepend BOM for UTF-8 XML and text/* types (including HTML)
+			// note: your browser will automatically convert UTF-16 U+FEFF to EF BB BF
+			if (/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(blob.type)) {
+				return new Blob([String.fromCharCode(0xFEFF), blob], {type: blob.type});
+			}
+			return blob;
+		}
+		, FileSaver = function(blob, name, no_auto_bom) {
+			if (!no_auto_bom) {
+				blob = auto_bom(blob);
+			}
+			// First try a.download, then web filesystem, then object URLs
+			var
+				  filesaver = this
+				, type = blob.type
+				, force = type === force_saveable_type
+				, object_url
+				, dispatch_all = function() {
+					dispatch(filesaver, "writestart progress write writeend".split(" "));
+				}
+				// on any filesys errors revert to saving with object URLs
+				, fs_error = function() {
+					if ((is_chrome_ios || (force && is_safari)) && view.FileReader) {
+						// Safari doesn't allow downloading of blob urls
+						var reader = new FileReader();
+						reader.onloadend = function() {
+							var url = is_chrome_ios ? reader.result : reader.result.replace(/^data:[^;]*;/, 'data:attachment/file;');
+							var popup = view.open(url, '_blank');
+							if(!popup) view.location.href = url;
+							url=undefined; // release reference before dispatching
+							filesaver.readyState = filesaver.DONE;
+							dispatch_all();
+						};
+						reader.readAsDataURL(blob);
+						filesaver.readyState = filesaver.INIT;
+						return;
+					}
+					// don't create more object URLs than needed
+					if (!object_url) {
+						object_url = get_URL().createObjectURL(blob);
+					}
+					if (force) {
+						view.location.href = object_url;
+					} else {
+						var opened = view.open(object_url, "_blank");
+						if (!opened) {
+							// Apple does not allow window.open, see https://developer.apple.com/library/safari/documentation/Tools/Conceptual/SafariExtensionGuide/WorkingwithWindowsandTabs/WorkingwithWindowsandTabs.html
+							view.location.href = object_url;
+						}
+					}
+					filesaver.readyState = filesaver.DONE;
+					dispatch_all();
+					revoke(object_url);
+				}
+			;
+			filesaver.readyState = filesaver.INIT;
+
+			if (can_use_save_link) {
+				object_url = get_URL().createObjectURL(blob);
+				setTimeout(function() {
+					save_link.href = object_url;
+					save_link.download = name;
+					click(save_link);
+					dispatch_all();
+					revoke(object_url);
+					filesaver.readyState = filesaver.DONE;
+				});
+				return;
+			}
+
+			fs_error();
+		}
+		, FS_proto = FileSaver.prototype
+		, saveAs = function(blob, name, no_auto_bom) {
+			return new FileSaver(blob, name || blob.name || "download", no_auto_bom);
+		}
+	;
+	// IE 10+ (native saveAs)
+	if (typeof navigator !== "undefined" && navigator.msSaveOrOpenBlob) {
+		return function(blob, name, no_auto_bom) {
+			name = name || blob.name || "download";
+
+			if (!no_auto_bom) {
+				blob = auto_bom(blob);
+			}
+			return navigator.msSaveOrOpenBlob(blob, name);
+		};
+	}
+
+	FS_proto.abort = function(){};
+	FS_proto.readyState = FS_proto.INIT = 0;
+	FS_proto.WRITING = 1;
+	FS_proto.DONE = 2;
+
+	FS_proto.error =
+	FS_proto.onwritestart =
+	FS_proto.onprogress =
+	FS_proto.onwrite =
+	FS_proto.onabort =
+	FS_proto.onerror =
+	FS_proto.onwriteend =
+		null;
+
+	return saveAs;
+}(
+	   typeof self !== "undefined" && self
+	|| typeof window !== "undefined" && window
+	|| this.content
+));
+// `self` is undefined in Firefox for Android content script context
+// while `this` is nsIContentFrameMessageManager
+// with an attribute `content` that corresponds to the window
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports.saveAs = saveAs;
+} else if (("function" !== "undefined" && __webpack_require__(185) !== null) && (__webpack_require__(186) !== null)) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
+    return saveAs;
+  }.call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+}
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Backbone) {
 
@@ -22561,7 +22756,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22655,7 +22850,7 @@ module.exports = _.extend({}, CreateComponent, {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22959,7 +23154,7 @@ module.exports = Backbone.View.extend({
     }));
 
     if (typeof ItemsView == 'undefined') {
-      ItemsView = __webpack_require__(56);
+      ItemsView = __webpack_require__(57);
     }
 
     var children = new ItemsView({
@@ -22987,14 +23182,14 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var ItemView = __webpack_require__(55);
+var ItemView = __webpack_require__(56);
 
 module.exports = Backbone.View.extend({
   initialize: function initialize() {
@@ -23128,7 +23323,7 @@ module.exports = Backbone.View.extend({
 });
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23148,16 +23343,16 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(59);
+module.exports = __webpack_require__(60);
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23172,9 +23367,9 @@ var _underscore = __webpack_require__(1);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = function () {
-  var defaultConfig = __webpack_require__(60);
-  var Editor = __webpack_require__(61);
-  var PluginManager = __webpack_require__(218);
+  var defaultConfig = __webpack_require__(61);
+  var Editor = __webpack_require__(62);
+  var PluginManager = __webpack_require__(225);
   var plugins = new PluginManager();
   var editors = [];
 
@@ -23187,7 +23382,7 @@ module.exports = function () {
     plugins: plugins,
 
     // Will be replaced on build
-    version: '0.12.52',
+    version: '<# VERSION #>',
 
     /**
      * Initializes an editor based on passed options
@@ -23245,7 +23440,7 @@ module.exports = function () {
 }();
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23285,7 +23480,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23298,529 +23493,529 @@ var _cashDom2 = _interopRequireDefault(_cashDom);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = function (config) {
-  var c = config || {},
-      defaults = __webpack_require__(62),
-      EditorModel = __webpack_require__(63),
-      EditorView = __webpack_require__(217);
-
-  for (var name in defaults) {
-    if (!(name in c)) c[name] = defaults[name];
-  }
-
-  c.pStylePrefix = c.stylePrefix;
-  var em = new EditorModel(c);
-  var editorView = new EditorView({
-    model: em,
-    config: c
-  });
-
-  return {
-
-    $: _cashDom2.default,
-
-    /**
-     * @property {EditorModel}
-     * @private
-     */
-    editor: em,
-
-    /**
-     * @property {DomComponents}
-     * @private
-     */
-    DomComponents: em.get('DomComponents'),
-
-    /**
-     * @property {CssComposer}
-     * @private
-     */
-    CssComposer: em.get('CssComposer'),
-
-    /**
-     * @property {StorageManager}
-     * @private
-     */
-    StorageManager: em.get('StorageManager'),
-
-    /**
-     * @property {AssetManager}
-     */
-    AssetManager: em.get('AssetManager'),
-
-    /**
-     * @property {BlockManager}
-     * @private
-     */
-    BlockManager: em.get('BlockManager'),
-
-    /**
-     * @property {TraitManager}
-     * @private
-     */
-    TraitManager: em.get('TraitManager'),
-
-    /**
-     * @property {SelectorManager}
-     * @private
-     */
-    SelectorManager: em.get('SelectorManager'),
-
-    /**
-     * @property {CodeManager}
-     * @private
-     */
-    CodeManager: em.get('CodeManager'),
-
-    /**
-     * @property {Commands}
-     * @private
-     */
-    Commands: em.get('Commands'),
-
-    /**
-     * @property {Keymaps}
-     * @private
-     */
-    Keymaps: em.get('Keymaps'),
-
-    /**
-     * @property {Modal}
-     * @private
-     */
-    Modal: em.get('Modal'),
-
-    /**
-     * @property {Panels}
-     * @private
-     */
-    Panels: em.get('Panels'),
-
-    /**
-     * @property {StyleManager}
-     * @private
-     */
-    StyleManager: em.get('StyleManager'),
-
-    /**
-     * @property {Canvas}
-     * @private
-     */
-    Canvas: em.get('Canvas'),
-
-    /**
-     * @property {UndoManager}
-     * @private
-     */
-    UndoManager: em.get('UndoManager'),
-
-    /**
-     * @property {DeviceManager}
-     * @private
-     */
-    DeviceManager: em.get('DeviceManager'),
-
-    /**
-     * @property {RichTextEditor}
-     * @private
-     */
-    RichTextEditor: em.get('RichTextEditor'),
-
-    /**
-     * @property {Utils}
-     * @private
-     */
-    Utils: em.get('Utils'),
-
-    /**
-     * @property {Utils}
-     * @private
-     */
-    Config: em.get('Config'),
-
-    /**
-     * Initialize editor model
-     * @return {this}
-     * @private
-     */
-    init: function init() {
-      em.init(this);
-      return this;
-    },
-
-
-    /**
-     * Returns configuration object
-     * @param  {string} [prop] Property name
-     * @return {any} Returns the configuration object or
-     *  the value of the specified property
-     */
-    getConfig: function getConfig(prop) {
-      return em.getConfig(prop);
-    },
-
-
-    /**
-     * Returns HTML built inside canvas
-     * @return {string} HTML string
-     */
-    getHtml: function getHtml(opts) {
-      return em.getHtml(opts);
-    },
-
-
-    /**
-     * Returns CSS built inside canvas
-     * @param {Object} [opts={}] Options
-     * @return {string} CSS string
-     */
-    getCss: function getCss(opts) {
-      return em.getCss(opts);
-    },
-
-
-    /**
-     * Returns JS of all components
-     * @return {string} JS string
-     */
-    getJs: function getJs() {
-      return em.getJs();
-    },
-
-
-    /**
-     * Returns components in JSON format object
-     * @return {Object}
-     */
-    getComponents: function getComponents() {
-      return em.get('DomComponents').getComponents();
-    },
-
-
-    /**
-     * Set components inside editor's canvas. This method overrides actual components
-     * @param {Array<Object>|Object|string} components HTML string or components model
-     * @return {this}
-     * @example
-     * editor.setComponents('<div class="cls">New component</div>');
-     * // or
-     * editor.setComponents({
-     *  type: 'text',
-     *   classes:['cls'],
-     *   content: 'New component'
-     * });
-     */
-    setComponents: function setComponents(components) {
-      em.setComponents(components);
-      return this;
-    },
-
-
-    /**
-     * Add components
-     * @param {Array<Object>|Object|string} components HTML string or components model
-     * @param {Object} opts Options
-     * @param {Boolean} [opts.avoidUpdateStyle=false] If the HTML string contains styles,
-     * by default, they will be created and, if already exist, updated. When this option
-     * is true, styles already created will not be updated.
-     * @return {Model|Array<Model>}
-     * @example
-     * editor.addComponents('<div class="cls">New component</div>');
-     * // or
-     * editor.addComponents({
-     *  type: 'text',
-     *   classes:['cls'],
-     *   content: 'New component'
-     * });
-     */
-    addComponents: function addComponents(components, opts) {
-      return this.getComponents().add(components, opts);
-    },
-
-
-    /**
-     * Returns style in JSON format object
-     * @return {Object}
-     */
-    getStyle: function getStyle() {
-      return em.get('CssComposer').getAll();
-    },
-
-
-    /**
-     * Set style inside editor's canvas. This method overrides actual style
-     * @param {Array<Object>|Object|string} style CSS string or style model
-     * @return {this}
-     * @example
-     * editor.setStyle('.cls{color: red}');
-     * //or
-     * editor.setStyle({
-     *   selectors: ['cls']
-     *   style: { color: 'red' }
-     * });
-     */
-    setStyle: function setStyle(style) {
-      em.setStyle(style);
-      return this;
-    },
-
-
-    /**
-     * Returns selected component, if there is one
-     * @return {Model}
-     */
-    getSelected: function getSelected() {
-      return em.getSelected();
-    },
-
-
-    /**
-     * Get a stylable entity from the selected component.
-     * If you select a component without classes the entity is the Component
-     * itself and all changes will go inside its 'style' attribute. Otherwise,
-     * if the selected component has one or more classes, the function will
-     * return the corresponding CSS Rule
-     * @return {Model}
-     */
-    getSelectedToStyle: function getSelectedToStyle() {
-      var selected = em.getSelected();
-
-      if (selected) {
-        return this.StyleManager.getModelToStyle(selected);
-      }
-    },
-
-
-    /**
-     * Select a component
-     * @param  {Component|HTMLElement} el Component to select
-     * @return {this}
-     * @example
-     * // Select dropped block
-     * editor.on('block:drag:stop', function(model) {
-     *  editor.select(model);
-     * });
-     */
-    select: function select(el) {
-      em.setSelected(el);
-      return this;
-    },
-
-
-    /**
-     * Set device to the editor. If the device exists it will
-     * change the canvas to the proper width
-     * @param {string} name Name of the device
-     * @return {this}
-     * @example
-     * editor.setDevice('Tablet');
-     */
-    setDevice: function setDevice(name) {
-      em.set('device', name);
-      return this;
-    },
-
-
-    /**
-     * Return the actual active device
-     * @return {string} Device name
-     * @example
-     * var device = editor.getDevice();
-     * console.log(device);
-     * // 'Tablet'
-     */
-    getDevice: function getDevice() {
-      return em.get('device');
-    },
-
-
-    /**
-     * Execute command
-     * @param {string} id Command ID
-     * @param {Object} options Custom options
-     * @return {*} The return is defined by the command
-     * @example
-     * editor.runCommand('myCommand', {someValue: 1});
-     */
-    runCommand: function runCommand(id, options) {
-      var result;
-      var command = em.get('Commands').get(id);
-
-      if (command) {
-        result = command.run(this, this, options);
-        this.trigger('run:' + id);
-      }
-      return result;
-    },
-
-
-    /**
-     * Stop the command if stop method was provided
-     * @param {string} id Command ID
-     * @param {Object} options Custom options
-     * @return {*} The return is defined by the command
-     * @example
-     * editor.stopCommand('myCommand', {someValue: 1});
-     */
-    stopCommand: function stopCommand(id, options) {
-      var result;
-      var command = em.get('Commands').get(id);
-
-      if (command) {
-        result = command.stop(this, this, options);
-        this.trigger('stop:' + id);
-      }
-      return result;
-    },
-
-
-    /**
-     * Store data to the current storage
-     * @param {Function} clb Callback function
-     * @return {Object} Stored data
-     */
-    store: function store(clb) {
-      return em.store(clb);
-    },
-
-
-    /**
-     * Load data from the current storage
-     * @param {Function} clb Callback function
-     * @return {Object} Stored data
-     */
-    load: function load(clb) {
-      return em.load(clb);
-    },
-
-
-    /**
-     * Returns container element. The one which was indicated as 'container'
-     * on init method
-     * @return {HTMLElement}
-     */
-    getContainer: function getContainer() {
-      return c.el;
-    },
-
-
-    /**
-     * Update editor dimensions and refresh data useful for positioning of tools
-     *
-     * This method could be useful when you update, for example, some position
-     * of the editor element (eg. canvas, panels, etc.) with CSS, where without
-     * refresh you'll get misleading position of tools (eg. rich text editor,
-     * component highlighter, etc.)
-     *
-     * @private
-     */
-    refresh: function refresh() {
-      em.refreshCanvas();
-    },
-
-
-    /**
-     * Replace the built-in Rich Text Editor with a custom one.
-     * @param {Object} obj Custom RTE Interface
-     * @example
-     * editor.setCustomRte({
-     *   // Function for enabling custom RTE
-     *   // el is the HTMLElement of the double clicked Text Component
-     *   // rte is the same instance you have returned the first time you call
-     *   // enable(). This is useful if need to check if the RTE is already enabled so
-     *   // ion this case you'll need to return the RTE and the end of the function
-     *   enable: function(el, rte) {
-     *     rte = new MyCustomRte(el, {}); // this depends on the Custom RTE API
-     *     ...
-     *     return rte; // return the RTE instance
-     *   },
-     *
-     *   // Disable the editor, called for example when you unfocus the Text Component
-     *  disable: function(el, rte) {
-     *     rte.blur(); // this depends on the Custom RTE API
-     *  }
-     *
-     * // Called when the Text Component is focused again. If you returned the RTE instance
-     * // from the enable function, the enable won't be called again instead will call focus,
-     * // in this case to avoid double binding of the editor
-     *  focus: function (el, rte) {
-     *   rte.focus(); // this depends on the Custom RTE API
-     *  }
-     * });
-     */
-    setCustomRte: function setCustomRte(obj) {
-      this.RichTextEditor.customRte = obj;
-    },
-
-
-    /**
-     * Attach event
-     * @param  {string} event Event name
-     * @param  {Function} callback Callback function
-     * @return {this}
-     */
-    on: function on(event, callback) {
-      return em.on(event, callback);
-    },
-
-
-    /**
-     * Detach event
-     * @param  {string} event Event name
-     * @param  {Function} callback Callback function
-     * @return {this}
-     */
-    off: function off(event, callback) {
-      return em.off(event, callback);
-    },
-
-
-    /**
-     * Trigger event
-     * @param  {string} event Event to trigger
-     * @return {this}
-     */
-    trigger: function trigger(event) {
-      return em.trigger.apply(em, arguments);
-    },
-
-
-    /**
-     * Returns editor element
-     * @return {HTMLElement}
-     * @private
-     */
-    getEl: function getEl() {
-      return editorView.el;
-    },
-
-
-    /**
-     * Returns editor model
-     * @return {Model}
-     * @private
-     */
-    getModel: function getModel() {
-      return em;
-    },
-
-
-    /**
-     * Render editor
-     * @return {HTMLElement}
-     */
-    render: function render() {
-      // Do post render stuff after the iframe is loaded otherwise it'll
-      // be empty during tests
-      em.on('loaded', function () {
-        em.get('modules').forEach(function (module) {
-          module.postRender && module.postRender(editorView);
-        });
-      });
-
-      editorView.render();
-      return editorView.el;
+    var c = config || {},
+        defaults = __webpack_require__(63),
+        EditorModel = __webpack_require__(64),
+        EditorView = __webpack_require__(224);
+
+    for (var name in defaults) {
+        if (!(name in c)) c[name] = defaults[name];
     }
-  };
+
+    c.pStylePrefix = c.stylePrefix;
+    var em = new EditorModel(c);
+    var editorView = new EditorView({
+        model: em,
+        config: c
+    });
+
+    return {
+
+        $: _cashDom2.default,
+
+        /**
+         * @property {EditorModel}
+         * @private
+         */
+        editor: em,
+
+        /**
+         * @property {DomComponents}
+         * @private
+         */
+        DomComponents: em.get('DomComponents'),
+
+        /**
+         * @property {CssComposer}
+         * @private
+         */
+        CssComposer: em.get('CssComposer'),
+
+        /**
+         * @property {StorageManager}
+         * @private
+         */
+        StorageManager: em.get('StorageManager'),
+
+        /**
+         * @property {AssetManager}
+         */
+        AssetManager: em.get('AssetManager'),
+
+        /**
+         * @property {BlockManager}
+         * @private
+         */
+        BlockManager: em.get('BlockManager'),
+
+        /**
+         * @property {TraitManager}
+         * @private
+         */
+        TraitManager: em.get('TraitManager'),
+
+        /**
+         * @property {SelectorManager}
+         * @private
+         */
+        SelectorManager: em.get('SelectorManager'),
+
+        /**
+         * @property {CodeManager}
+         * @private
+         */
+        CodeManager: em.get('CodeManager'),
+
+        /**
+         * @property {Commands}
+         * @private
+         */
+        Commands: em.get('Commands'),
+
+        /**
+         * @property {Keymaps}
+         * @private
+         */
+        Keymaps: em.get('Keymaps'),
+
+        /**
+         * @property {Modal}
+         * @private
+         */
+        Modal: em.get('Modal'),
+
+        /**
+         * @property {Panels}
+         * @private
+         */
+        Panels: em.get('Panels'),
+
+        /**
+         * @property {StyleManager}
+         * @private
+         */
+        StyleManager: em.get('StyleManager'),
+
+        /**
+         * @property {Canvas}
+         * @private
+         */
+        Canvas: em.get('Canvas'),
+
+        /**
+         * @property {UndoManager}
+         * @private
+         */
+        UndoManager: em.get('UndoManager'),
+
+        /**
+         * @property {DeviceManager}
+         * @private
+         */
+        DeviceManager: em.get('DeviceManager'),
+
+        /**
+         * @property {RichTextEditor}
+         * @private
+         */
+        RichTextEditor: em.get('RichTextEditor'),
+
+        /**
+         * @property {Utils}
+         * @private
+         */
+        Utils: em.get('Utils'),
+
+        /**
+         * @property {Utils}
+         * @private
+         */
+        Config: em.get('Config'),
+
+        /**
+         * Initialize editor model
+         * @return {this}
+         * @private
+         */
+        init: function init() {
+            em.init(this);
+            return this;
+        },
+
+
+        /**
+         * Returns configuration object
+         * @param  {string} [prop] Property name
+         * @return {any} Returns the configuration object or
+         *  the value of the specified property
+         */
+        getConfig: function getConfig(prop) {
+            return em.getConfig(prop);
+        },
+
+
+        /**
+         * Returns HTML built inside canvas
+         * @return {string} HTML string
+         */
+        getHtml: function getHtml(opts) {
+            return em.getHtml(opts);
+        },
+
+
+        /**
+         * Returns CSS built inside canvas
+         * @param {Object} [opts={}] Options
+         * @return {string} CSS string
+         */
+        getCss: function getCss(opts) {
+            return em.getCss(opts);
+        },
+
+
+        /**
+         * Returns JS of all components
+         * @return {string} JS string
+         */
+        getJs: function getJs() {
+            return em.getJs();
+        },
+
+
+        /**
+         * Returns components in JSON format object
+         * @return {Object}
+         */
+        getComponents: function getComponents() {
+            return em.get('DomComponents').getComponents();
+        },
+
+
+        /**
+         * Set components inside editor's canvas. This method overrides actual components
+         * @param {Array<Object>|Object|string} components HTML string or components model
+         * @return {this}
+         * @example
+         * editor.setComponents('<div class="cls">New component</div>');
+         * // or
+         * editor.setComponents({
+         *  type: 'text',
+         *   classes:['cls'],
+         *   content: 'New component'
+         * });
+         */
+        setComponents: function setComponents(components) {
+            em.setComponents(components);
+            return this;
+        },
+
+
+        /**
+         * Add components
+         * @param {Array<Object>|Object|string} components HTML string or components model
+         * @param {Object} opts Options
+         * @param {Boolean} [opts.avoidUpdateStyle=false] If the HTML string contains styles,
+         * by default, they will be created and, if already exist, updated. When this option
+         * is true, styles already created will not be updated.
+         * @return {Model|Array<Model>}
+         * @example
+         * editor.addComponents('<div class="cls">New component</div>');
+         * // or
+         * editor.addComponents({
+         *  type: 'text',
+         *   classes:['cls'],
+         *   content: 'New component'
+         * });
+         */
+        addComponents: function addComponents(components, opts) {
+            return this.getComponents().add(components, opts);
+        },
+
+
+        /**
+         * Returns style in JSON format object
+         * @return {Object}
+         */
+        getStyle: function getStyle() {
+            return em.get('CssComposer').getAll();
+        },
+
+
+        /**
+         * Set style inside editor's canvas. This method overrides actual style
+         * @param {Array<Object>|Object|string} style CSS string or style model
+         * @return {this}
+         * @example
+         * editor.setStyle('.cls{color: red}');
+         * //or
+         * editor.setStyle({
+         *   selectors: ['cls']
+         *   style: { color: 'red' }
+         * });
+         */
+        setStyle: function setStyle(style) {
+            em.setStyle(style);
+            return this;
+        },
+
+
+        /**
+         * Returns selected component, if there is one
+         * @return {Model}
+         */
+        getSelected: function getSelected() {
+            return em.getSelected();
+        },
+
+
+        /**
+         * Get a stylable entity from the selected component.
+         * If you select a component without classes the entity is the Component
+         * itself and all changes will go inside its 'style' attribute. Otherwise,
+         * if the selected component has one or more classes, the function will
+         * return the corresponding CSS Rule
+         * @return {Model}
+         */
+        getSelectedToStyle: function getSelectedToStyle() {
+            var selected = em.getSelected();
+
+            if (selected) {
+                return this.StyleManager.getModelToStyle(selected);
+            }
+        },
+
+
+        /**
+         * Select a component
+         * @param  {Component|HTMLElement} el Component to select
+         * @return {this}
+         * @example
+         * // Select dropped block
+         * editor.on('block:drag:stop', function(model) {
+         *  editor.select(model);
+         * });
+         */
+        select: function select(el) {
+            em.setSelected(el);
+            return this;
+        },
+
+
+        /**
+         * Set device to the editor. If the device exists it will
+         * change the canvas to the proper width
+         * @param {string} name Name of the device
+         * @return {this}
+         * @example
+         * editor.setDevice('Tablet');
+         */
+        setDevice: function setDevice(name) {
+            em.set('device', name);
+            return this;
+        },
+
+
+        /**
+         * Return the actual active device
+         * @return {string} Device name
+         * @example
+         * var device = editor.getDevice();
+         * console.log(device);
+         * // 'Tablet'
+         */
+        getDevice: function getDevice() {
+            return em.get('device');
+        },
+
+
+        /**
+         * Execute command
+         * @param {string} id Command ID
+         * @param {Object} options Custom options
+         * @return {*} The return is defined by the command
+         * @example
+         * editor.runCommand('myCommand', {someValue: 1});
+         */
+        runCommand: function runCommand(id, options) {
+            var result;
+            var command = em.get('Commands').get(id);
+
+            if (command) {
+                result = command.run(this, this, options);
+                this.trigger('run:' + id);
+            }
+            return result;
+        },
+
+
+        /**
+         * Stop the command if stop method was provided
+         * @param {string} id Command ID
+         * @param {Object} options Custom options
+         * @return {*} The return is defined by the command
+         * @example
+         * editor.stopCommand('myCommand', {someValue: 1});
+         */
+        stopCommand: function stopCommand(id, options) {
+            var result;
+            var command = em.get('Commands').get(id);
+
+            if (command) {
+                result = command.stop(this, this, options);
+                this.trigger('stop:' + id);
+            }
+            return result;
+        },
+
+
+        /**
+         * Store data to the current storage
+         * @param {Function} clb Callback function
+         * @return {Object} Stored data
+         */
+        store: function store(clb) {
+            return em.store(clb);
+        },
+
+
+        /**
+         * Load data from the current storage
+         * @param {Function} clb Callback function
+         * @return {Object} Stored data
+         */
+        load: function load(clb) {
+            return em.load(clb);
+        },
+
+
+        /**
+         * Returns container element. The one which was indicated as 'container'
+         * on init method
+         * @return {HTMLElement}
+         */
+        getContainer: function getContainer() {
+            return c.el;
+        },
+
+
+        /**
+         * Update editor dimensions and refresh data useful for positioning of tools
+         *
+         * This method could be useful when you update, for example, some position
+         * of the editor element (eg. canvas, panels, etc.) with CSS, where without
+         * refresh you'll get misleading position of tools (eg. rich text editor,
+         * component highlighter, etc.)
+         *
+         * @private
+         */
+        refresh: function refresh() {
+            em.refreshCanvas();
+        },
+
+
+        /**
+         * Replace the built-in Rich Text Editor with a custom one.
+         * @param {Object} obj Custom RTE Interface
+         * @example
+         * editor.setCustomRte({
+         *   // Function for enabling custom RTE
+         *   // el is the HTMLElement of the double clicked Text Component
+         *   // rte is the same instance you have returned the first time you call
+         *   // enable(). This is useful if need to check if the RTE is already enabled so
+         *   // ion this case you'll need to return the RTE and the end of the function
+         *   enable: function(el, rte) {
+         *     rte = new MyCustomRte(el, {}); // this depends on the Custom RTE API
+         *     ...
+         *     return rte; // return the RTE instance
+         *   },
+         *
+         *   // Disable the editor, called for example when you unfocus the Text Component
+         *  disable: function(el, rte) {
+         *     rte.blur(); // this depends on the Custom RTE API
+         *  }
+         *
+         * // Called when the Text Component is focused again. If you returned the RTE instance
+         * // from the enable function, the enable won't be called again instead will call focus,
+         * // in this case to avoid double binding of the editor
+         *  focus: function (el, rte) {
+         *   rte.focus(); // this depends on the Custom RTE API
+         *  }
+         * });
+         */
+        setCustomRte: function setCustomRte(obj) {
+            this.RichTextEditor.customRte = obj;
+        },
+
+
+        /**
+         * Attach event
+         * @param  {string} event Event name
+         * @param  {Function} callback Callback function
+         * @return {this}
+         */
+        on: function on(event, callback) {
+            return em.on(event, callback);
+        },
+
+
+        /**
+         * Detach event
+         * @param  {string} event Event name
+         * @param  {Function} callback Callback function
+         * @return {this}
+         */
+        off: function off(event, callback) {
+            return em.off(event, callback);
+        },
+
+
+        /**
+         * Trigger event
+         * @param  {string} event Event to trigger
+         * @return {this}
+         */
+        trigger: function trigger(event) {
+            return em.trigger.apply(em, arguments);
+        },
+
+
+        /**
+         * Returns editor element
+         * @return {HTMLElement}
+         * @private
+         */
+        getEl: function getEl() {
+            return editorView.el;
+        },
+
+
+        /**
+         * Returns editor model
+         * @return {Model}
+         * @private
+         */
+        getModel: function getModel() {
+            return em;
+        },
+
+
+        /**
+         * Render editor
+         * @return {HTMLElement}
+         */
+        render: function render() {
+            // Do post render stuff after the iframe is loaded otherwise it'll
+            // be empty during tests
+            em.on('loaded', function () {
+                em.get('modules').forEach(function (module) {
+                    module.postRender && module.postRender(editorView);
+                });
+            });
+
+            editorView.render();
+            return editorView.el;
+        }
+    };
 }; /**
     * Editor class contains the top level API which you'll probably use to custom the editor or extend it with plugins.
     * You get the Editor instance on init method
@@ -23905,7 +24100,7 @@ module.exports = function (config) {
     */
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24089,7 +24284,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24099,14 +24294,14 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _underscore = __webpack_require__(1);
 
-var deps = [__webpack_require__(64), __webpack_require__(68), __webpack_require__(69), __webpack_require__(77), __webpack_require__(82), __webpack_require__(85), __webpack_require__(89), __webpack_require__(93), __webpack_require__(105), __webpack_require__(111), __webpack_require__(31), __webpack_require__(128), __webpack_require__(134), __webpack_require__(139), __webpack_require__(146), __webpack_require__(174), __webpack_require__(180), __webpack_require__(206)];
+var deps = [__webpack_require__(65), __webpack_require__(69), __webpack_require__(70), __webpack_require__(78), __webpack_require__(83), __webpack_require__(86), __webpack_require__(90), __webpack_require__(94), __webpack_require__(106), __webpack_require__(112), __webpack_require__(31), __webpack_require__(129), __webpack_require__(135), __webpack_require__(140), __webpack_require__(147), __webpack_require__(175), __webpack_require__(181), __webpack_require__(213)];
 
 var Backbone = __webpack_require__(0);
-var UndoManager = __webpack_require__(214);
+var UndoManager = __webpack_require__(221);
 var key = __webpack_require__(17);
 var timedInterval = void 0;
 
-__webpack_require__(216)({
+__webpack_require__(223)({
   Backbone: Backbone,
   $: Backbone.$
 });
@@ -24801,7 +24996,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24809,9 +25004,9 @@ module.exports = Backbone.Model.extend({
 
 module.exports = function () {
 
-  var Sorter = __webpack_require__(65);
-  var Resizer = __webpack_require__(66);
-  var Dragger = __webpack_require__(67);
+  var Sorter = __webpack_require__(66);
+  var Resizer = __webpack_require__(67);
+  var Dragger = __webpack_require__(68);
 
   return {
     /**
@@ -24836,7 +25031,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25770,7 +25965,7 @@ module.exports = Backbone.View.extend({
 
     if (dragHelper) {
       // dragHelper.remove();
-      dragHelper.parentNode.removeChild(dragHelper)
+      dragHelper.parentNode.removeChild(dragHelper);
       this.dragHelper = null;
     }
 
@@ -25868,7 +26063,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26409,7 +26604,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26756,7 +26951,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26902,7 +27097,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26917,9 +27112,9 @@ module.exports = function () {
  */
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(70),
-      LocalStorage = __webpack_require__(71),
-      RemoteStorage = __webpack_require__(72);
+      defaults = __webpack_require__(71),
+      LocalStorage = __webpack_require__(72),
+      RemoteStorage = __webpack_require__(73);
 
   var storages = {};
   var defaultStorages = {};
@@ -27151,7 +27346,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27219,7 +27414,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27289,7 +27484,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27453,7 +27648,7 @@ module.exports = __webpack_require__(0).Model.extend({
 });
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {(function (root) {
@@ -27690,10 +27885,10 @@ module.exports = __webpack_require__(0).Model.extend({
 
 })(this);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(74).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(75).setImmediate))
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -27746,13 +27941,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(75);
+__webpack_require__(76);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -27942,10 +28137,10 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(76)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16), __webpack_require__(77)))
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -28135,7 +28330,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28152,9 +28347,9 @@ process.umask = function() { return 0; };
  */
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(78),
-      Devices = __webpack_require__(79),
-      DevicesView = __webpack_require__(81);
+      defaults = __webpack_require__(79),
+      Devices = __webpack_require__(80),
+      DevicesView = __webpack_require__(82);
   var devices, view;
 
   return {
@@ -28180,6 +28375,7 @@ module.exports = function () {
      * }
      * ...
      * @return {this}
+     * @private
      */
     init: function init(config) {
       c = config || {};
@@ -28255,7 +28451,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28270,21 +28466,21 @@ module.exports = {
 };
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var Device = __webpack_require__(80);
+var Device = __webpack_require__(81);
 
 module.exports = Backbone.Collection.extend({
   model: Device
 });
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28318,7 +28514,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28409,7 +28605,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28417,8 +28613,8 @@ module.exports = Backbone.View.extend({
 
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(83),
-      parserCss = __webpack_require__(84),
+      defaults = __webpack_require__(84),
+      parserCss = __webpack_require__(85),
       parserHtml = __webpack_require__(25);
   var pHtml, pCss;
 
@@ -28475,7 +28671,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28488,7 +28684,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28645,7 +28841,7 @@ module.exports = function (config) {
 };
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28706,10 +28902,10 @@ var _underscore = __webpack_require__(1);
 
 module.exports = function (config) {
   var c = config || {},
-      defaults = __webpack_require__(86),
+      defaults = __webpack_require__(87),
       Selector = __webpack_require__(9),
       Selectors = __webpack_require__(10),
-      ClassTagsView = __webpack_require__(87);
+      ClassTagsView = __webpack_require__(88);
   var selectors, selectorTags;
 
   return {
@@ -28866,7 +29062,7 @@ module.exports = function (config) {
 };
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28893,14 +29089,14 @@ module.exports = {
 };
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(_) {
 
 var Backbone = __webpack_require__(0);
-var ClassTagView = __webpack_require__(88);
+var ClassTagView = __webpack_require__(89);
 
 module.exports = Backbone.View.extend({
   template: _.template('\n  <div id="<%= pfx %>up">\n    <div id="<%= pfx %>label"><%= label %></div>\n    <div id="<%= pfx %>status-c">\n      <span id="<%= pfx %>input-c">\n        <div class="<%= ppfx %>field <%= ppfx %>select">\n          <span id="<%= ppfx %>input-holder">\n            <select id="<%= pfx %>states">\n              <option value=""><%= statesLabel %></option>\n            </select>\n          </span>\n          <div class="<%= ppfx %>sel-arrow">\n            <div class="<%= ppfx %>d-s-arrow"></div>\n          </div>\n        </div>\n      </span>\n    </div>\n  </div>\n  <div id="<%= pfx %>tags-field" class="<%= ppfx %>field">\n    <div id="<%= pfx %>tags-c"></div>\n    <input id="<%= pfx %>new" />\n    <span id="<%= pfx %>add-tag" class="fa fa-plus"></span>\n  </div>\n  <div id="<%= pfx %>sel-help">\n    <div id="<%= pfx %>label"><%= selectedLabel %></div>\n    <div id="<%= pfx %>sel"></div>\n    <div style="clear:both"></div>\n  </div>'),
@@ -29204,7 +29400,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29351,7 +29547,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29375,9 +29571,9 @@ module.exports = Backbone.View.extend({
  */
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(90),
-      ModalM = __webpack_require__(91),
-      ModalView = __webpack_require__(92);
+      defaults = __webpack_require__(91),
+      ModalM = __webpack_require__(92),
+      ModalView = __webpack_require__(93);
   var model, modal;
 
   return {
@@ -29523,7 +29719,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29542,7 +29738,7 @@ module.exports = {
 };;
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29559,7 +29755,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29697,7 +29893,7 @@ module.exports = __webpack_require__(0).View.extend({
 });
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29725,13 +29921,13 @@ module.exports = __webpack_require__(0).View.extend({
 module.exports = function () {
 
   var c = {},
-      defaults = __webpack_require__(94),
-      gHtml = __webpack_require__(95),
-      gCss = __webpack_require__(96),
-      gJson = __webpack_require__(97),
-      gJs = __webpack_require__(98),
-      eCM = __webpack_require__(99),
-      editorView = __webpack_require__(104);
+      defaults = __webpack_require__(95),
+      gHtml = __webpack_require__(96),
+      gCss = __webpack_require__(97),
+      gJson = __webpack_require__(98),
+      gJs = __webpack_require__(99),
+      eCM = __webpack_require__(100),
+      editorView = __webpack_require__(105);
 
   var generators = {},
       defGenerators = {},
@@ -29927,7 +30123,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29941,7 +30137,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29971,7 +30167,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30104,7 +30300,7 @@ module.exports = __webpack_require__(0).Model.extend({
 });
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30149,7 +30345,7 @@ module.exports = Backbone.Model.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30210,7 +30406,7 @@ module.exports = Backbone.Model.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30220,9 +30416,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var Backbone = __webpack_require__(0);
 var CodeMirror = __webpack_require__(6);
-var htmlMode = __webpack_require__(100);
+var htmlMode = __webpack_require__(101);
 var cssMode = __webpack_require__(26);
-var formatting = __webpack_require__(103);
+var formatting = __webpack_require__(104);
 
 module.exports = Backbone.Model.extend({
 
@@ -30260,7 +30456,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 100 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -30268,7 +30464,7 @@ module.exports = Backbone.Model.extend({
 
 (function(mod) {
   if (true) // CommonJS
-    mod(__webpack_require__(6), __webpack_require__(101), __webpack_require__(102), __webpack_require__(26));
+    mod(__webpack_require__(6), __webpack_require__(102), __webpack_require__(103), __webpack_require__(26));
   else if (typeof define == "function" && define.amd) // AMD
     define(["../../lib/codemirror", "../xml/xml", "../javascript/javascript", "../css/css"], mod);
   else // Plain browser env
@@ -30418,7 +30614,7 @@ module.exports = Backbone.Model.extend({
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -30818,7 +31014,7 @@ if (!CodeMirror.mimeModes.hasOwnProperty("text/html"))
 
 
 /***/ }),
-/* 102 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
@@ -31679,7 +31875,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 
 /***/ }),
-/* 103 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 (function(mod) {
@@ -31806,7 +32002,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 
 /***/ }),
-/* 104 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31834,7 +32030,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 105 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31889,11 +32085,11 @@ module.exports = Backbone.View.extend({
  */
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(106),
+      defaults = __webpack_require__(107),
       Panel = __webpack_require__(27),
-      Panels = __webpack_require__(108),
+      Panels = __webpack_require__(109),
       PanelView = __webpack_require__(29),
-      PanelsView = __webpack_require__(110);
+      PanelsView = __webpack_require__(111);
   var panels, PanelsViewObj;
 
   return {
@@ -32112,22 +32308,29 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+/*
+Config of Panels
+*/
 var crc = 'create-comp';
 var mvc = 'move-comp';
 var swv = 'sw-visibility';
 var expt = 'export-template';
+var impt = 'import-template';
+var testMail = 'send-test-mail';
 var osm = 'open-sm';
 var otm = 'open-tm';
 var ola = 'open-layers';
 var obl = 'open-blocks';
 var ful = 'fullscreen';
 var prv = 'preview';
+var nmt = 'new-merge-tag';
+var nci = "new-iteration";
 
 module.exports = {
   stylePrefix: 'pn-',
@@ -32146,6 +32349,18 @@ module.exports = {
       context: swv,
       attributes: { title: 'View components' }
     }, {
+      id: nmt,
+      className: 'fa fa-pencil',
+      command: nmt,
+      context: nmt,
+      attributes: { title: 'New Merge Tag' }
+    }, {
+      id: nci,
+      className: 'fa fa-pencil',
+      command: nci,
+      context: nci,
+      attributes: { title: 'New Iteration' }
+    }, {
       id: prv,
       className: 'fa fa-eye',
       command: prv,
@@ -32159,9 +32374,19 @@ module.exports = {
       attributes: { title: 'Fullscreen' }
     }, {
       id: expt,
-      className: 'fa fa-code',
+      className: 'fa fa-download',
       command: expt,
-      attributes: { title: 'View code' }
+      attributes: { title: 'View and export template code' }
+    }, {
+      id: impt,
+      className: 'fa fa-upload',
+      command: impt,
+      attributes: { title: 'Import template' }
+    }, {
+      id: testMail,
+      className: 'fa fa-paper-plane',
+      command: testMail,
+      attributes: { title: 'Sending test Email' }
     }]
   }, {
     id: 'views',
@@ -32197,7 +32422,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32231,7 +32456,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 108 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32245,7 +32470,7 @@ module.exports = Backbone.Collection.extend({
 });
 
 /***/ }),
-/* 109 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32583,7 +32808,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
-/* 110 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32662,13 +32887,13 @@ module.exports = Backbone.View.extend({
 });
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _RichTextEditor = __webpack_require__(112);
+var _RichTextEditor = __webpack_require__(113);
 
 var _RichTextEditor2 = _interopRequireDefault(_RichTextEditor);
 
@@ -32693,7 +32918,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 module.exports = function () {
   var config = {};
-  var defaults = __webpack_require__(113);
+  var defaults = __webpack_require__(114);
   var toolbar = void 0,
       actions = void 0,
       lastEl = void 0,
@@ -32982,7 +33207,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33007,7 +33232,10 @@ var defActions = {
   bold: {
     name: 'bold',
     icon: '<b>B</b>',
-    attributes: { title: 'Bold' },
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Bold'
+    },
     result: function result(rte) {
       return rte.exec('bold');
     }
@@ -33015,7 +33243,10 @@ var defActions = {
   italic: {
     name: 'italic',
     icon: '<i>I</i>',
-    attributes: { title: 'Italic' },
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Italic'
+    },
     result: function result(rte) {
       return rte.exec('italic');
     }
@@ -33023,7 +33254,10 @@ var defActions = {
   underline: {
     name: 'underline',
     icon: '<u>U</u>',
-    attributes: { title: 'Underline' },
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Underline'
+    },
     result: function result(rte) {
       return rte.exec('underline');
     }
@@ -33031,22 +33265,73 @@ var defActions = {
   strikethrough: {
     name: 'strikethrough',
     icon: '<strike>S</strike>',
-    attributes: { title: 'Strike-through' },
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Strike-through'
+    },
     result: function result(rte) {
       return rte.exec('strikeThrough');
     }
+  }
+  /* olist: {
+    name: 'olist',
+    icon: '&#35;',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Ordered List'
+    },
+    result: (rte) => rte.exec('olist')
   },
+  ulist: {
+    name: 'ulist',
+    icon: '&#8226;',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Unordered List'
+    },
+    result: (rte) => rte.exec('ulist')
+  }, 
+  line: {
+    name: 'line',
+    icon: '&#8213;',
+    title: 'Horizontal Line',
+    attributes: {
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Horizontal Line'
+    },
+    result: (rte) => rte.exec('insertHorizontalRule')
+  }, 
   link: {
-    icon: '<span style="transform:rotate(45deg)">&supdsub;</span>',
+    icon: `<span>&supdsub;</span>`,
     name: 'link',
     attributes: {
       style: 'font-size:1.4rem;padding:0 4px 2px;',
-      title: 'Link'
+      title: 'Link',
     },
-    result: function result(rte) {
-      return rte.insertHTML('<a class="link" href="">' + rte.selection() + '</a>');
-    }
-  }
+    result: (rte) => rte.insertHTML(`<a class="link" href="">${rte.selection()}</a>`)
+  }, 
+  mergefields: {
+    icon: `<select>
+            <option value="" disabled>- {{Merge Fields}} -</option>
+              <option style="color:black;" value="{{first_name}}">FirstName</option>
+              <option style="color:black;" value="{{last_name}}">LastName</option>
+              <option style="color:black;" value="{{age}}">Age</option>
+              <option style="color:black;" value="{{email}}">E-mail</option>
+              <option style="color:black;" value="{{phone}}">Phone</option>
+              <option style="color:black;" value="{{address_line_1}}">Address Line 1</option>
+              <option style="color:black;" value="{{address_line_2}}">Address Line 2</option>
+            </select>`,
+    name: 'mergefields',
+    attributes: {
+      id: "merge_fields",
+      class: "gjs-field",
+      style: 'font-size:1.4rem;padding:0 4px 2px;',
+      title: 'Merge Fields'
+    },
+    event: 'change',
+    result: (rte, action) => rte.insertHTML(action.btn.firstChild.value),
+    update: (rte, action) => { action.btn.firstChild.value = ""; }
+  }*/
 };
 
 var RichTextEditor = function () {
@@ -33300,7 +33585,7 @@ var RichTextEditor = function () {
 exports.default = RichTextEditor;
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33315,11 +33600,11 @@ module.exports = {
   adjustToolbar: 1,
 
   // Default RTE actions
-  actions: ['bold', 'italic', 'underline', 'strikethrough', 'link']
+  actions: ['bold', 'italic', 'underline', 'strikethrough']
 };
 
 /***/ }),
-/* 114 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33355,20 +33640,20 @@ module.exports = {
 };
 
 /***/ }),
-/* 115 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Sector = __webpack_require__(116);
+var Sector = __webpack_require__(117);
 
 module.exports = __webpack_require__(0).Collection.extend({
 	model: Sector
 });
 
 /***/ }),
-/* 116 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33378,7 +33663,7 @@ var _underscore = __webpack_require__(1);
 
 var Backbone = __webpack_require__(0);
 var Properties = __webpack_require__(11);
-var PropertyFactory = __webpack_require__(125);
+var PropertyFactory = __webpack_require__(126);
 
 module.exports = Backbone.Model.extend({
 
@@ -33469,7 +33754,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 117 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33478,7 +33763,7 @@ module.exports = Backbone.Model.extend({
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var Property = __webpack_require__(33);
-var Layers = __webpack_require__(118);
+var Layers = __webpack_require__(119);
 
 module.exports = Property.extend({
 
@@ -33503,7 +33788,7 @@ module.exports = Property.extend({
 });
 
 /***/ }),
-/* 118 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33511,7 +33796,7 @@ module.exports = Property.extend({
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var Layer = __webpack_require__(119);
+var Layer = __webpack_require__(120);
 
 module.exports = Backbone.Collection.extend({
 
@@ -33634,7 +33919,7 @@ module.exports = Backbone.Collection.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33690,7 +33975,7 @@ module.exports = Backbone.Model.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35925,14 +36210,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var LayerView = __webpack_require__(122);
+var LayerView = __webpack_require__(123);
 
 module.exports = Backbone.View.extend({
   initialize: function initialize(o) {
@@ -36056,7 +36341,7 @@ module.exports = Backbone.View.extend({
 });
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36216,7 +36501,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36235,7 +36520,7 @@ module.exports = Property.extend({
 });
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36288,7 +36573,7 @@ module.exports = Property.extend({
 });
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36659,7 +36944,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36669,7 +36954,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _underscore = __webpack_require__(1);
 
-var SectorView = __webpack_require__(127);
+var SectorView = __webpack_require__(128);
 
 module.exports = Backbone.View.extend({
   initialize: function initialize(o) {
@@ -36852,7 +37137,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36963,7 +37248,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37011,9 +37296,9 @@ module.exports = Backbone.View.extend({
 
 module.exports = function () {
   var c = {};
-  var defaults = __webpack_require__(129);
-  var Assets = __webpack_require__(130);
-  var AssetsView = __webpack_require__(133);
+  var defaults = __webpack_require__(130);
+  var Assets = __webpack_require__(131);
+  var AssetsView = __webpack_require__(134);
   var FileUpload = __webpack_require__(45);
   var assets = void 0,
       am = void 0,
@@ -37355,7 +37640,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37447,7 +37732,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37462,7 +37747,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 module.exports = __webpack_require__(0).Collection.extend(_TypeableCollection2.default).extend({
   types: [{
     id: 'image',
-    model: __webpack_require__(131),
+    model: __webpack_require__(132),
     view: __webpack_require__(43),
     isType: function isType(value) {
       if (typeof value == 'string') {
@@ -37477,7 +37762,7 @@ module.exports = __webpack_require__(0).Collection.extend(_TypeableCollection2.d
 });
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37485,7 +37770,7 @@ module.exports = __webpack_require__(0).Collection.extend(_TypeableCollection2.d
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var Asset = __webpack_require__(132);
+var Asset = __webpack_require__(133);
 
 module.exports = Asset.extend({
 
@@ -37499,7 +37784,7 @@ module.exports = Asset.extend({
 });
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37535,7 +37820,7 @@ module.exports = __webpack_require__(0).Model.extend({
 });
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37724,7 +38009,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37733,18 +38018,6 @@ module.exports = Backbone.View.extend({
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 /**
- * * [add](#add)
- * * [get](#get)
- * * [set](#set)
- * * [getAll](#getall)
- * * [clear](#clear)
- * * [load](#load)
- * * [store](#store)
- * * [setIdRule](#setidrule)
- * * [getIdRule](#getidrule)
- * * [setClassRule](#setclassrule)
- * * [getClassRule](#getclassrule)
- *
  * This module contains and manage CSS rules for the template inside the canvas
  * Before using the methods you should get first the module from the editor instance, in this way:
  *
@@ -37765,10 +38038,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 module.exports = function () {
   var em = void 0;
   var c = {},
-      defaults = __webpack_require__(135),
+      defaults = __webpack_require__(136),
       CssRule = __webpack_require__(46),
-      CssRules = __webpack_require__(136),
-      CssRulesView = __webpack_require__(137);
+      CssRules = __webpack_require__(137),
+      CssRulesView = __webpack_require__(138);
   var Selectors = __webpack_require__(10);
   var Selector = __webpack_require__(9);
 
@@ -38124,7 +38397,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 135 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38144,7 +38417,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 136 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38184,14 +38457,14 @@ module.exports = Backbone.Collection.extend({
 });
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var CssRuleView = __webpack_require__(138);
+var CssRuleView = __webpack_require__(139);
 
 module.exports = Backbone.View.extend({
   initialize: function initialize(o) {
@@ -38253,7 +38526,7 @@ module.exports = Backbone.View.extend({
 });
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38281,7 +38554,7 @@ module.exports = __webpack_require__(0).View.extend({
 });
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38291,8 +38564,8 @@ var _underscore = __webpack_require__(1);
 
 module.exports = function () {
   var c = {};
-  var defaultOpts = __webpack_require__(140);
-  var TraitsView = __webpack_require__(141);
+  var defaultOpts = __webpack_require__(141);
+  var TraitsView = __webpack_require__(142);
   var TraitsViewer = void 0;
 
   return {
@@ -38369,7 +38642,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38393,7 +38666,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38401,10 +38674,10 @@ module.exports = {
 
 var DomainViews = __webpack_require__(48);
 var TraitView = __webpack_require__(7);
-var TraitSelectView = __webpack_require__(142);
-var TraitCheckboxView = __webpack_require__(143);
-var TraitNumberView = __webpack_require__(144);
-var TraitColorView = __webpack_require__(145);
+var TraitSelectView = __webpack_require__(143);
+var TraitCheckboxView = __webpack_require__(144);
+var TraitNumberView = __webpack_require__(145);
+var TraitColorView = __webpack_require__(146);
 
 module.exports = DomainViews.extend({
 
@@ -38443,7 +38716,7 @@ module.exports = DomainViews.extend({
 });
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38512,7 +38785,7 @@ module.exports = TraitView.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38567,7 +38840,7 @@ module.exports = TraitView.extend({
 });
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38622,7 +38895,7 @@ module.exports = TraitView.extend({
 });
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38667,7 +38940,7 @@ module.exports = TraitView.extend({
 });
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38711,7 +38984,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
  */
 module.exports = function () {
   var c = {};
-  var defaults = __webpack_require__(147);
+  var defaults = __webpack_require__(148);
   var Component = __webpack_require__(3);
   var ComponentView = __webpack_require__(4);
   var Components = __webpack_require__(49);
@@ -38720,56 +38993,56 @@ module.exports = function () {
   var component, componentView;
   var componentTypes = [{
     id: 'cell',
-    model: __webpack_require__(151),
-    view: __webpack_require__(152)
+    model: __webpack_require__(152),
+    view: __webpack_require__(153)
   }, {
     id: 'row',
-    model: __webpack_require__(153),
-    view: __webpack_require__(154)
+    model: __webpack_require__(154),
+    view: __webpack_require__(155)
   }, {
     id: 'table',
-    model: __webpack_require__(155),
-    view: __webpack_require__(156)
+    model: __webpack_require__(156),
+    view: __webpack_require__(157)
   }, {
     id: 'thead',
-    model: __webpack_require__(157),
-    view: __webpack_require__(158)
+    model: __webpack_require__(158),
+    view: __webpack_require__(159)
   }, {
     id: 'tbody',
     model: __webpack_require__(20),
-    view: __webpack_require__(159)
+    view: __webpack_require__(160)
   }, {
     id: 'tfoot',
-    model: __webpack_require__(160),
-    view: __webpack_require__(161)
+    model: __webpack_require__(161),
+    view: __webpack_require__(162)
   }, {
     id: 'map',
-    model: __webpack_require__(162),
-    view: __webpack_require__(163)
+    model: __webpack_require__(163),
+    view: __webpack_require__(164)
   }, {
     id: 'link',
-    model: __webpack_require__(164),
-    view: __webpack_require__(165)
+    model: __webpack_require__(165),
+    view: __webpack_require__(166)
   }, {
     id: 'video',
-    model: __webpack_require__(166),
-    view: __webpack_require__(167)
+    model: __webpack_require__(167),
+    view: __webpack_require__(168)
   }, {
     id: 'image',
     model: __webpack_require__(21),
     view: __webpack_require__(15)
   }, {
     id: 'script',
-    model: __webpack_require__(168),
-    view: __webpack_require__(169)
+    model: __webpack_require__(169),
+    view: __webpack_require__(170)
   }, {
     id: 'svg',
-    model: __webpack_require__(170),
-    view: __webpack_require__(171)
+    model: __webpack_require__(171),
+    view: __webpack_require__(172)
   }, {
     id: 'textnode',
-    model: __webpack_require__(172),
-    view: __webpack_require__(173)
+    model: __webpack_require__(173),
+    view: __webpack_require__(174)
   }, {
     id: 'text',
     model: __webpack_require__(51),
@@ -39158,7 +39431,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39200,7 +39473,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39209,8 +39482,8 @@ module.exports = {
 var _underscore = __webpack_require__(1);
 
 var Backbone = __webpack_require__(0);
-var Trait = __webpack_require__(149);
-var TraitFactory = __webpack_require__(150);
+var Trait = __webpack_require__(150);
+var TraitFactory = __webpack_require__(151);
 
 module.exports = Backbone.Collection.extend({
 
@@ -39250,7 +39523,7 @@ module.exports = Backbone.Collection.extend({
 });
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39301,7 +39574,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39358,7 +39631,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39393,7 +39666,7 @@ module.exports = Component.extend({
 });
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39405,7 +39678,7 @@ var ComponentView = __webpack_require__(4);
 module.exports = ComponentView.extend({});
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39448,7 +39721,7 @@ module.exports = Component.extend({
 });
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39460,7 +39733,7 @@ var ComponentView = __webpack_require__(4);
 module.exports = ComponentView.extend({});
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39496,7 +39769,7 @@ module.exports = Component.extend({
 });
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39510,7 +39783,7 @@ module.exports = ComponentView.extend({
 });
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39540,18 +39813,6 @@ module.exports = ComponentTableBody.extend({
 });
 
 /***/ }),
-/* 158 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var Backbone = __webpack_require__(0);
-var ComponentView = __webpack_require__(4);
-
-module.exports = ComponentView.extend({});
-
-/***/ }),
 /* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39565,6 +39826,18 @@ module.exports = ComponentView.extend({});
 
 /***/ }),
 /* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Backbone = __webpack_require__(0);
+var ComponentView = __webpack_require__(4);
+
+module.exports = ComponentView.extend({});
+
+/***/ }),
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39594,7 +39867,7 @@ module.exports = ComponentTableBody.extend({
 });
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39606,7 +39879,7 @@ var ComponentView = __webpack_require__(4);
 module.exports = ComponentView.extend({});
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39710,7 +39983,7 @@ module.exports = Component.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39763,7 +40036,7 @@ module.exports = ComponentView.extend({
 });
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39827,7 +40100,7 @@ module.exports = Component.extend({
 });
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39858,7 +40131,7 @@ module.exports = ComponentView.extend({
 });
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40167,7 +40440,7 @@ module.exports = Component.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40293,7 +40566,7 @@ module.exports = ComponentView.extend({
 });
 
 /***/ }),
-/* 168 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40327,7 +40600,7 @@ module.exports = Component.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40368,7 +40641,7 @@ module.exports = ComponentView.extend({
 });
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40408,7 +40681,7 @@ module.exports = Component.extend({
 });
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40425,7 +40698,7 @@ module.exports = ComponentView.extend({
 });
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40458,7 +40731,7 @@ module.exports = Component.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40469,7 +40742,7 @@ var Backbone = __webpack_require__(0);
 module.exports = Backbone.View.extend({});
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40479,9 +40752,9 @@ var _mixins = __webpack_require__(2);
 
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(175),
-      Canvas = __webpack_require__(176),
-      CanvasView = __webpack_require__(178);
+      defaults = __webpack_require__(176),
+      Canvas = __webpack_require__(177),
+      CanvasView = __webpack_require__(179);
   var canvas;
   var frameRect;
 
@@ -40904,7 +41177,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40948,14 +41221,14 @@ module.exports = {
 };
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var Frame = __webpack_require__(177);
+var Frame = __webpack_require__(178);
 
 module.exports = Backbone.Model.extend({
 
@@ -40972,7 +41245,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40992,13 +41265,13 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Backbone, _) {
 
-var FrameView = __webpack_require__(179);
+var FrameView = __webpack_require__(180);
 var $ = Backbone.$;
 
 module.exports = Backbone.View.extend({
@@ -41308,7 +41581,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41370,7 +41643,7 @@ module.exports = __webpack_require__(0).View.extend({
 });
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41382,8 +41655,8 @@ module.exports = function () {
   var c = {},
       commands = {},
       defaultCommands = {},
-      defaults = __webpack_require__(181),
-      AbsCommands = __webpack_require__(182);
+      defaults = __webpack_require__(182),
+      AbsCommands = __webpack_require__(183);
 
   // Need it here as it would be used below
   var add = function add(id, obj) {
@@ -41425,27 +41698,33 @@ module.exports = function () {
         if (obj.id) this.add(obj.id, obj);
       }
 
-      var ViewCode = __webpack_require__(183);
+      var ViewCode = __webpack_require__(184);
+      var ImptCode = __webpack_require__(187);
+      var SendTestMail = __webpack_require__(188);
       defaultCommands['select-comp'] = __webpack_require__(22);
       defaultCommands['create-comp'] = __webpack_require__(23);
-      defaultCommands['delete-comp'] = __webpack_require__(188);
-      defaultCommands['image-comp'] = __webpack_require__(189);
-      defaultCommands['move-comp'] = __webpack_require__(190);
-      defaultCommands['text-comp'] = __webpack_require__(191);
-      defaultCommands['insert-custom'] = __webpack_require__(54);
+      defaultCommands['delete-comp'] = __webpack_require__(193);
+      defaultCommands['image-comp'] = __webpack_require__(194);
+      defaultCommands['move-comp'] = __webpack_require__(195);
+      defaultCommands['text-comp'] = __webpack_require__(196);
+      defaultCommands['insert-custom'] = __webpack_require__(55);
       defaultCommands['export-template'] = ViewCode;
-      defaultCommands['sw-visibility'] = __webpack_require__(192);
-      defaultCommands['open-layers'] = __webpack_require__(193);
-      defaultCommands['open-sm'] = __webpack_require__(196);
-      defaultCommands['open-tm'] = __webpack_require__(197);
-      defaultCommands['open-blocks'] = __webpack_require__(198);
-      defaultCommands['open-assets'] = __webpack_require__(199);
-      defaultCommands['show-offset'] = __webpack_require__(200);
-      defaultCommands['select-parent'] = __webpack_require__(201);
-      defaultCommands.fullscreen = __webpack_require__(202);
-      defaultCommands.preview = __webpack_require__(203);
-      defaultCommands.resize = __webpack_require__(204);
-      defaultCommands.drag = __webpack_require__(205);
+      defaultCommands['import-template'] = ImptCode;
+      defaultCommands['send-test-mail'] = SendTestMail;
+      defaultCommands['sw-visibility'] = __webpack_require__(197);
+      defaultCommands['open-layers'] = __webpack_require__(198);
+      defaultCommands['open-sm'] = __webpack_require__(201);
+      defaultCommands['open-tm'] = __webpack_require__(202);
+      defaultCommands['open-blocks'] = __webpack_require__(203);
+      defaultCommands['open-assets'] = __webpack_require__(204);
+      defaultCommands['show-offset'] = __webpack_require__(205);
+      defaultCommands['select-parent'] = __webpack_require__(206);
+      defaultCommands.fullscreen = __webpack_require__(207);
+      defaultCommands.preview = __webpack_require__(208);
+      defaultCommands.resize = __webpack_require__(209);
+      defaultCommands.drag = __webpack_require__(210);
+      defaultCommands['new-merge-tag'] = __webpack_require__(211);
+      defaultCommands['new-iteration'] = __webpack_require__(212);
 
       defaultCommands['tlb-delete'] = {
         run: function run(ed) {
@@ -41658,7 +41937,7 @@ module.exports = function () {
     */
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41689,7 +41968,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41816,17 +42095,19 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Backbone) {
 
 var $ = Backbone.$;
+var fileSaver = __webpack_require__(53);
 
 module.exports = {
   run: function run(editor, sender) {
     var opts = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
 
     sender && sender.set && sender.set('active', 0);
     var config = editor.getConfig();
@@ -41840,7 +42121,11 @@ module.exports = {
       this.htmlEditor = oHtmlEd.el;
       this.cssEditor = oCsslEd.el;
       var $editors = $('<div class="' + pfx + 'export-dl"></div>');
-      $editors.append(oHtmlEd.$el).append(oCsslEd.$el);
+      // Build the export button
+      var htmlContent = editor.getHtml();
+      var cssContent = editor.getCss();
+      var exportBtn = this.buildButton("Export", htmlContent, cssContent);
+      $editors.append(oHtmlEd.$el).append(oCsslEd.$el).append(exportBtn);
       this.$editors = $editors;
     }
 
@@ -41873,12 +42158,264 @@ module.exports = {
     el.init(input);
 
     return { el: el, $el: $el };
+  },
+  buildButton: function buildButton(label, htmlContent, cssContent) {
+    var pfx = editor.getConfig().stylePrefix;
+    var modal = editor.Modal;
+    var code = htmlContent + "\n" + "<style>\n" + cssContent + "\n</style>";
+
+    var btn = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
+    btn.innerHTML = label; // 'Add the merge tag'
+    btn.className = pfx + 'btn-prim ' + pfx + 'btn-export';
+    btn.onclick = function () {
+      try {
+        var fileName = "page.txt";
+        var blobData = new Blob([code], { type: "text/plain;charset=utf-8" });
+
+        if (typeof window.navigator.msSaveBlob !== 'undefined') {
+          window.navigator.msSaveBlob(blobData, fileName);
+        } else {
+          fileSaver.saveAs(blobData, fileName);
+        }
+      } catch (err) {
+        console.log("Download failed!");
+        console.log("Exception: ", err);
+      }
+
+      modal.close();
+    };
+    return btn;
   }
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 184 */
+/* 185 */
+/***/ (function(module, exports) {
+
+module.exports = function() {
+	throw new Error("define cannot be used indirect");
+};
+
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Backbone) {
+
+var $ = Backbone.$;
+var fileSaver = __webpack_require__(53);
+
+module.exports = {
+  run: function run(editor, sender) {
+    var opts = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+
+    console.log("run function in import template");
+
+    sender && sender.set && sender.set('active', 0);
+    var config = editor.getConfig();
+    var modal = editor.Modal;
+    var pfx = config.stylePrefix;
+
+    this.cm = editor.CodeManager || null;
+
+    if (!this.$editors) {
+
+      var dialog = this.buildDialog();
+
+      var $editors = $("<div class=\"" + pfx + "export-dl\"></div>");
+      // Build the export button
+      var importBtn = this.buildButton("Import", editor);
+      $editors.append(dialog).append(importBtn);
+      this.$editors = $editors;
+    }
+
+    modal.setTitle("Please choose a E-mail template");
+    modal.setContent(this.$editors);
+    modal.open();
+  },
+  stop: function stop(editor) {
+    console.log("Stop function in import template");
+    var modal = editor.Modal;
+    modal && modal.close();
+  },
+
+
+  /*
+  Building the dialog of importing a template
+  */
+  buildDialog: function buildDialog() {
+
+    var container = document.createElement("div"); // <div></div>
+    var fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.setAttribute("id", "fileInput");
+    // fileInput.setAttribute("onchange", function () { alert("onchange") });
+    container.appendChild(fileInput);
+
+    return container;
+  },
+  buildButton: function buildButton(label, editor) {
+    var _this = this;
+
+    var pfx = editor.getConfig().stylePrefix;
+    var modal = editor.Modal;
+
+    var btn = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
+    btn.innerHTML = label; // 'Add the merge tag'
+    btn.className = pfx + 'btn-prim ' + pfx + 'btn-import';
+    btn.onclick = function () {
+      try {
+        if (_this.checkFileAPI()) {
+          _this.readText(editor);
+        } else {
+          alert('The File APIs are not fully supported by your browser. Fallback required.');
+        }
+      } catch (err) {
+        console.log("Download failed!");
+        console.log("Exception: ", err);
+      }
+      modal.close();
+    };
+    return btn;
+  },
+
+
+  /*
+  Read the content of the template
+  */
+  readText: function readText(editor) {
+
+    var fileInput = document.getElementById('fileInput');
+
+    var file = fileInput.files[0];
+
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      var result = reader.result;
+      console.log("reading result");
+      console.log(result);
+
+      editor.DomComponents.getWrapper().set('content', '');
+      editor.setComponents(result);
+      editor.Modal.close();
+    };
+
+    reader.readAsText(file);
+  },
+  checkFileAPI: function checkFileAPI() {
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Backbone) {
+
+var $ = Backbone.$;
+
+module.exports = {
+        run: function run(editor, sender) {
+                var opts = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+
+                console.log("run function in sending test Email");
+
+                sender && sender.set && sender.set('active', 0);
+                var config = editor.getConfig();
+                var modal = editor.Modal;
+                var pfx = config.stylePrefix;
+
+                if (!this.$editors) {
+
+                        var $editors = $("<div class=\"" + pfx + "export-dl\"></div>");
+                        var container = this.buildDialog(editor);
+                        // Build the export button
+                        var sendBtn = this.buildButton("Send", editor);
+                        $editors.append(container).append(sendBtn);
+                        this.$editors = $editors;
+                }
+
+                modal.setTitle("Please enter the Email address and subject below (As there is no public API to send a test Email by Putsmail(Paid service), sending test email might be implemented in Java): ");
+                modal.setContent(this.$editors);
+                modal.open();
+        },
+        stop: function stop(editor) {
+                console.log("Stop function in import template");
+                var modal = editor.Modal;
+                modal && modal.close();
+        },
+        buildDialog: function buildDialog(editor) {
+
+                var container = document.createElement("div");
+                var divider = document.createElement("br");
+
+                var sendToL = document.createElement("label");
+                sendToL.innerHTML = "Send To: &nbsp;&nbsp;";
+                var sendTo = document.createElement("input");
+                sendTo.setAttribute("type", "text");
+                sendTo.setAttribute("id", "sendTo");
+
+                var subjectL = document.createElement("label");
+                subjectL.innerHTML = "Subject: &nbsp;&nbsp;";
+                var subject = document.createElement("input");
+                subject.setAttribute("type", "text");
+                subject.setAttribute("id", "subject");
+
+                container.appendChild(sendToL).appendChild(sendTo);
+                container.appendChild(divider);
+                container.appendChild(subjectL).appendChild(subject);
+
+                return container;
+        },
+        buildButton: function buildButton(label, editor) {
+
+                var pfx = editor.getConfig().stylePrefix;
+                var modal = editor.Modal;
+
+                var btn = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
+                btn.innerHTML = label; // 'Add the merge tag'
+                btn.className = pfx + 'btn-prim ' + pfx + 'btn-import';
+                btn.onclick = function () {
+
+                        var sendToVal = document.getElementById("sendTo").value;
+                        var subjectVal = document.getElementById("subject").value;
+
+                        alert("Test Email of " + subjectVal + " sent to " + sendToVal + "!");
+                        var htmlContent = editor.getHtml();
+                        var cssContent = editor.getCss();
+                        alert(htmlContent + "\n" + cssContent);
+
+                        modal.close();
+                };
+                return btn;
+        }
+};
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41886,7 +42423,7 @@ module.exports = {
 
 var Backbone = __webpack_require__(0);
 var DomainViews = __webpack_require__(48);
-var ToolbarButtonView = __webpack_require__(185);
+var ToolbarButtonView = __webpack_require__(190);
 
 module.exports = DomainViews.extend({
 
@@ -41899,7 +42436,7 @@ module.exports = DomainViews.extend({
 });
 
 /***/ }),
-/* 185 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41941,19 +42478,19 @@ module.exports = Backbone.View.extend({
 });
 
 /***/ }),
-/* 186 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var ToolbarButton = __webpack_require__(187);
+var ToolbarButton = __webpack_require__(192);
 
 module.exports = Backbone.Collection.extend({ model: ToolbarButton });
 
 /***/ }),
-/* 187 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41971,7 +42508,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 188 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42054,14 +42591,14 @@ module.exports = _.extend({}, SelectComponent, {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
-/* 189 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(_) {
 
 var Backbone = __webpack_require__(0);
-var InsertCustom = __webpack_require__(54);
+var InsertCustom = __webpack_require__(55);
 
 module.exports = _.extend({}, InsertCustom, {
 
@@ -42095,7 +42632,7 @@ module.exports = _.extend({}, InsertCustom, {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 190 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42104,7 +42641,7 @@ module.exports = _.extend({}, InsertCustom, {
 var _mixins = __webpack_require__(2);
 
 var SelectComponent = __webpack_require__(22);
-var SelectPosition = __webpack_require__(53);
+var SelectPosition = __webpack_require__(54);
 var $ = Backbone.$;
 
 module.exports = _.extend({}, SelectPosition, SelectComponent, {
@@ -42262,7 +42799,7 @@ module.exports = _.extend({}, SelectPosition, SelectComponent, {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(1)))
 
 /***/ }),
-/* 191 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42299,7 +42836,7 @@ module.exports = _.extend({}, CreateComponent, {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 192 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42315,13 +42852,13 @@ module.exports = {
 };
 
 /***/ }),
-/* 193 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(Backbone) {
 
-var Layers = __webpack_require__(194);
+var Layers = __webpack_require__(199);
 var $ = Backbone.$;
 
 module.exports = {
@@ -42358,7 +42895,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 194 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42367,9 +42904,9 @@ module.exports = {
 module.exports = function () {
   var itemsView = void 0;
   var config = {};
-  var defaults = __webpack_require__(195);
-  var ItemView = __webpack_require__(55);
-  var ItemsView = __webpack_require__(56);
+  var defaults = __webpack_require__(200);
+  var ItemView = __webpack_require__(56);
+  var ItemsView = __webpack_require__(57);
 
   return {
     init: function init(collection, opts) {
@@ -42438,7 +42975,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 195 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42461,7 +42998,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 196 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42538,7 +43075,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 197 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42571,7 +43108,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 198 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42601,7 +43138,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 199 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42635,7 +43172,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 200 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42644,153 +43181,153 @@ module.exports = {
 var $ = Backbone.$;
 
 module.exports = {
-  getOffsetMethod: function getOffsetMethod(state) {
-    var method = state || '';
-    return 'get' + method + 'OffsetViewerEl';
-  },
-  run: function run(editor, sender, opts) {
-    var opt = opts || {};
-    var state = opt.state || '';
-    var config = editor.getConfig();
+    getOffsetMethod: function getOffsetMethod(state) {
+        var method = state || '';
+        return 'get' + method + 'OffsetViewerEl';
+    },
+    run: function run(editor, sender, opts) {
+        var opt = opts || {};
+        var state = opt.state || '';
+        var config = editor.getConfig();
 
-    if (!config.showOffsets || !config.showOffsetsSelected && state == 'Fixed') {
-      return;
+        if (!config.showOffsets || !config.showOffsetsSelected && state == 'Fixed') {
+            return;
+        }
+
+        var canvas = editor.Canvas;
+        var el = opt.el || '';
+        var pos = opt.elPos || canvas.getElementPos(el);
+        var style = window.getComputedStyle(el);
+        var ppfx = this.ppfx;
+        var stateVar = state + 'State';
+        var method = this.getOffsetMethod(state);
+        var offsetViewer = canvas[method]();
+        offsetViewer.style.display = 'block';
+
+        var marginT = this['marginT' + state];
+        var marginB = this['marginB' + state];
+        var marginL = this['marginL' + state];
+        var marginR = this['marginR' + state];
+        var padT = this['padT' + state];
+        var padB = this['padB' + state];
+        var padL = this['padL' + state];
+        var padR = this['padR' + state];
+
+        if (!this[stateVar]) {
+            var stateLow = state.toLowerCase();
+            var marginName = stateLow + 'margin-v';
+            var paddingName = stateLow + 'padding-v';
+            var marginV = $('<div class="' + ppfx + 'marginName">').get(0);
+            var paddingV = $('<div class="' + ppfx + 'paddingName">').get(0);
+            var marginEls = ppfx + marginName + '-el';
+            var paddingEls = ppfx + paddingName + '-el';
+            var fullMargName = marginEls + ' ' + (ppfx + marginName);
+            var fullPadName = paddingEls + ' ' + (ppfx + paddingName);
+            marginT = $('<div class="' + fullMargName + '-top"></div>').get(0);
+            marginB = $('<div class="' + fullMargName + '-bottom"></div>').get(0);
+            marginL = $('<div class="' + fullMargName + '-left"></div>').get(0);
+            marginR = $('<div class="' + fullMargName + '-right"></div>').get(0);
+            padT = $('<div class="' + fullPadName + '-top"></div>').get(0);
+            padB = $('<div class="' + fullPadName + '-bottom"></div>').get(0);
+            padL = $('<div class="' + fullPadName + '-left"></div>').get(0);
+            padR = $('<div class="' + fullPadName + '-right"></div>').get(0);
+            this['marginT' + state] = marginT;
+            this['marginB' + state] = marginB;
+            this['marginL' + state] = marginL;
+            this['marginR' + state] = marginR;
+            this['padT' + state] = padT;
+            this['padB' + state] = padB;
+            this['padL' + state] = padL;
+            this['padR' + state] = padR;
+            marginV.appendChild(marginT);
+            marginV.appendChild(marginB);
+            marginV.appendChild(marginL);
+            marginV.appendChild(marginR);
+            paddingV.appendChild(padT);
+            paddingV.appendChild(padB);
+            paddingV.appendChild(padL);
+            paddingV.appendChild(padR);
+            offsetViewer.appendChild(marginV);
+            offsetViewer.appendChild(paddingV);
+            this[stateVar] = '1';
+        }
+
+        var unit = 'px';
+        var marginLeftSt = style.marginLeft.replace(unit, '');
+        var marginTopSt = parseInt(style.marginTop.replace(unit, ''));
+        var marginBottomSt = parseInt(style.marginBottom.replace(unit, ''));
+        var mtStyle = marginT.style;
+        var mbStyle = marginB.style;
+        var mlStyle = marginL.style;
+        var mrStyle = marginR.style;
+        var ptStyle = padT.style;
+        var pbStyle = padB.style;
+        var plStyle = padL.style;
+        var prStyle = padR.style;
+        var posLeft = parseInt(pos.left);
+
+        // Margin style
+        mtStyle.height = style.marginTop;
+        mtStyle.width = style.width;
+        mtStyle.top = pos.top - style.marginTop.replace(unit, '') + unit;
+        mtStyle.left = posLeft + unit;
+
+        mbStyle.height = style.marginBottom;
+        mbStyle.width = style.width;
+        mbStyle.top = pos.top + pos.height + unit;
+        mbStyle.left = posLeft + unit;
+
+        var marginSideH = pos.height + marginTopSt + marginBottomSt + unit;
+        var marginSideT = pos.top - marginTopSt + unit;
+        mlStyle.height = marginSideH;
+        mlStyle.width = style.marginLeft;
+        mlStyle.top = marginSideT;
+        mlStyle.left = posLeft - marginLeftSt + unit;
+
+        mrStyle.height = marginSideH;
+        mrStyle.width = style.marginRight;
+        mrStyle.top = marginSideT;
+        mrStyle.left = posLeft + pos.width + unit;
+
+        // Padding style
+        var padTop = parseInt(style.paddingTop.replace(unit, ''));
+        ptStyle.height = style.paddingTop;
+        ptStyle.width = style.width;
+        ptStyle.top = pos.top + unit;
+        ptStyle.left = posLeft + unit;
+
+        var padBot = parseInt(style.paddingBottom.replace(unit, ''));
+        pbStyle.height = style.paddingBottom;
+        pbStyle.width = style.width;
+        pbStyle.top = pos.top + pos.height - padBot + unit;
+        pbStyle.left = posLeft + unit;
+
+        var padSideH = pos.height - padBot - padTop + unit;
+        var padSideT = pos.top + padTop + unit;
+        plStyle.height = padSideH;
+        plStyle.width = style.paddingLeft;
+        plStyle.top = padSideT;
+        plStyle.left = pos.left + unit;
+
+        var padRight = parseInt(style.paddingRight.replace(unit, ''));
+        prStyle.height = padSideH;
+        prStyle.width = style.paddingRight;
+        prStyle.top = padSideT;
+        prStyle.left = pos.left + pos.width - padRight + unit;
+    },
+    stop: function stop(editor, sender, opts) {
+        var opt = opts || {};
+        var state = opt.state || '';
+        var method = this.getOffsetMethod(state);
+        var canvas = editor.Canvas;
+        var offsetViewer = canvas[method]();
+        offsetViewer.style.display = 'none';
     }
-
-    var canvas = editor.Canvas;
-    var el = opt.el || '';
-    var pos = opt.elPos || canvas.getElementPos(el);
-    var style = window.getComputedStyle(el);
-    var ppfx = this.ppfx;
-    var stateVar = state + 'State';
-    var method = this.getOffsetMethod(state);
-    var offsetViewer = canvas[method]();
-    offsetViewer.style.display = 'block';
-
-    var marginT = this['marginT' + state];
-    var marginB = this['marginB' + state];
-    var marginL = this['marginL' + state];
-    var marginR = this['marginR' + state];
-    var padT = this['padT' + state];
-    var padB = this['padB' + state];
-    var padL = this['padL' + state];
-    var padR = this['padR' + state];
-
-    if (!this[stateVar]) {
-      var stateLow = state.toLowerCase();
-      var marginName = stateLow + 'margin-v';
-      var paddingName = stateLow + 'padding-v';
-      var marginV = $('<div class="' + ppfx + 'marginName">').get(0);
-      var paddingV = $('<div class="' + ppfx + 'paddingName">').get(0);
-      var marginEls = ppfx + marginName + '-el';
-      var paddingEls = ppfx + paddingName + '-el';
-      var fullMargName = marginEls + ' ' + (ppfx + marginName);
-      var fullPadName = paddingEls + ' ' + (ppfx + paddingName);
-      marginT = $('<div class="' + fullMargName + '-top"></div>').get(0);
-      marginB = $('<div class="' + fullMargName + '-bottom"></div>').get(0);
-      marginL = $('<div class="' + fullMargName + '-left"></div>').get(0);
-      marginR = $('<div class="' + fullMargName + '-right"></div>').get(0);
-      padT = $('<div class="' + fullPadName + '-top"></div>').get(0);
-      padB = $('<div class="' + fullPadName + '-bottom"></div>').get(0);
-      padL = $('<div class="' + fullPadName + '-left"></div>').get(0);
-      padR = $('<div class="' + fullPadName + '-right"></div>').get(0);
-      this['marginT' + state] = marginT;
-      this['marginB' + state] = marginB;
-      this['marginL' + state] = marginL;
-      this['marginR' + state] = marginR;
-      this['padT' + state] = padT;
-      this['padB' + state] = padB;
-      this['padL' + state] = padL;
-      this['padR' + state] = padR;
-      marginV.appendChild(marginT);
-      marginV.appendChild(marginB);
-      marginV.appendChild(marginL);
-      marginV.appendChild(marginR);
-      paddingV.appendChild(padT);
-      paddingV.appendChild(padB);
-      paddingV.appendChild(padL);
-      paddingV.appendChild(padR);
-      offsetViewer.appendChild(marginV);
-      offsetViewer.appendChild(paddingV);
-      this[stateVar] = '1';
-    }
-
-    var unit = 'px';
-    var marginLeftSt = style.marginLeft.replace(unit, '');
-    var marginTopSt = parseInt(style.marginTop.replace(unit, ''));
-    var marginBottomSt = parseInt(style.marginBottom.replace(unit, ''));
-    var mtStyle = marginT.style;
-    var mbStyle = marginB.style;
-    var mlStyle = marginL.style;
-    var mrStyle = marginR.style;
-    var ptStyle = padT.style;
-    var pbStyle = padB.style;
-    var plStyle = padL.style;
-    var prStyle = padR.style;
-    var posLeft = parseInt(pos.left);
-
-    // Margin style
-    mtStyle.height = style.marginTop;
-    mtStyle.width = style.width;
-    mtStyle.top = pos.top - style.marginTop.replace(unit, '') + unit;
-    mtStyle.left = posLeft + unit;
-
-    mbStyle.height = style.marginBottom;
-    mbStyle.width = style.width;
-    mbStyle.top = pos.top + pos.height + unit;
-    mbStyle.left = posLeft + unit;
-
-    var marginSideH = pos.height + marginTopSt + marginBottomSt + unit;
-    var marginSideT = pos.top - marginTopSt + unit;
-    mlStyle.height = marginSideH;
-    mlStyle.width = style.marginLeft;
-    mlStyle.top = marginSideT;
-    mlStyle.left = posLeft - marginLeftSt + unit;
-
-    mrStyle.height = marginSideH;
-    mrStyle.width = style.marginRight;
-    mrStyle.top = marginSideT;
-    mrStyle.left = posLeft + pos.width + unit;
-
-    // Padding style
-    var padTop = parseInt(style.paddingTop.replace(unit, ''));
-    ptStyle.height = style.paddingTop;
-    ptStyle.width = style.width;
-    ptStyle.top = pos.top + unit;
-    ptStyle.left = posLeft + unit;
-
-    var padBot = parseInt(style.paddingBottom.replace(unit, ''));
-    pbStyle.height = style.paddingBottom;
-    pbStyle.width = style.width;
-    pbStyle.top = pos.top + pos.height - padBot + unit;
-    pbStyle.left = posLeft + unit;
-
-    var padSideH = pos.height - padBot - padTop + unit;
-    var padSideT = pos.top + padTop + unit;
-    plStyle.height = padSideH;
-    plStyle.width = style.paddingLeft;
-    plStyle.top = padSideT;
-    plStyle.left = pos.left + unit;
-
-    var padRight = parseInt(style.paddingRight.replace(unit, ''));
-    prStyle.height = padSideH;
-    prStyle.width = style.paddingRight;
-    prStyle.top = padSideT;
-    prStyle.left = pos.left + pos.width - padRight + unit;
-  },
-  stop: function stop(editor, sender, opts) {
-    var opt = opts || {};
-    var state = opt.state || '';
-    var method = this.getOffsetMethod(state);
-    var canvas = editor.Canvas;
-    var offsetViewer = canvas[method]();
-    offsetViewer.style.display = 'none';
-  }
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 201 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42805,7 +43342,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 202 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42878,7 +43415,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 203 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42947,7 +43484,7 @@ module.exports = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 204 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42984,7 +43521,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 205 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43022,7 +43559,183 @@ module.exports = {
 };
 
 /***/ }),
-/* 206 */
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    getPanels: function getPanels(editor) {
+
+        var pfx = 'gjs-';
+
+        /* Init the container */
+        var container = document.createElement("div"); // <div></div>
+
+        var labelEl = document.createElement('div');
+        labelEl.className = pfx + 'new-mt';
+        labelEl.innerHTML = opt.modalLabelAddMergeTag;
+        container.appendChild(labelEl);
+
+        /* Init the labels and text-inputs */
+        var tb_key = document.createElement("input");
+        tb_key.setAttribute("type", "text");
+        var label_key = document.createElement("label");
+        var text_key = document.createTextNode("Tag Key: ");
+        label_key.appendChild(text_key);
+
+        var tb_value = document.createElement("input");
+        tb_value.setAttribute("type", "text");
+        var label_value = document.createElement("label");
+        var text_value = document.createTextNode("Tag Value: ");
+        label_value.appendChild(text_value);
+
+        /* Init add merge tag button */
+        var btnImp = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
+        btnImp.innerHTML = opt.modalBtnAddMT; // 'Add the merge tag'
+        btnImp.className = pfx + 'btn-prim ' + pfx + 'btn-new-mt';
+
+        var br_1 = document.createElement("br");
+        var br_2 = document.createElement("br");
+        var br_3 = document.createElement("br");
+        var br_4 = document.createElement("br");
+        var br_5 = document.createElement("br");
+        var br_6 = document.createElement("br");
+        container.appendChild(label_key);
+        container.appendChild(br_1);
+        container.appendChild(tb_key);
+        container.appendChild(br_2);
+        container.appendChild(br_3);
+        container.appendChild(label_value);
+        container.appendChild(br_4);
+        container.appendChild(tb_value);
+        container.appendChild(br_5);
+        container.appendChild(br_6);
+        container.appendChild(btnImp);
+
+        btnImp.onclick = function () {
+            var kVal = tb_key.value;
+            var vVal = "{{ " + tb_value.value + " }}";
+
+            // todo: Saving the merge tag
+            alert("New merge tag -  " + kVal + ": " + vVal + " is saved!");
+
+            editor.Modal.close();
+        };
+    },
+    tglPointers: function tglPointers(editor, v) {},
+    run: function run(editor, sender) {
+        console.log("logging the editor in return block");
+        console.log(editor);
+        console.log("logging the sender in return block");
+        console.log(sender);
+
+        var md = editor.Modal;
+
+        md.setTitle('Add new merge tag'); // 'Add new merge tag'
+
+        var modalContent = md.getContentEl(); // The container
+
+        md.setContent('');
+        var container = document.createElement("div");
+        md.setContent(container);
+        md.open();
+        sender && sender.set('active', 0);
+    },
+    stop: function stop(editor, sender) {}
+};
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = {
+    getPanels: function getPanels(editor) {
+
+        var pfx = 'gjs-';
+
+        /* Init the container */
+        var container = document.createElement("div"); // <div></div>
+
+        var labelEl = document.createElement('div');
+        labelEl.className = pfx + 'new-mt';
+        labelEl.innerHTML = opt.modalLabelAddMergeTag;
+        container.appendChild(labelEl);
+
+        /* Init the labels and text-inputs */
+        var tb_key = document.createElement("input");
+        tb_key.setAttribute("type", "text");
+        var label_key = document.createElement("label");
+        var text_key = document.createTextNode("Tag Key: ");
+        label_key.appendChild(text_key);
+
+        var tb_value = document.createElement("input");
+        tb_value.setAttribute("type", "text");
+        var label_value = document.createElement("label");
+        var text_value = document.createTextNode("Tag Value: ");
+        label_value.appendChild(text_value);
+
+        /* Init add merge tag button */
+        var btnImp = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
+        btnImp.innerHTML = opt.modalBtnAddMT; // 'Add the merge tag'
+        btnImp.className = pfx + 'btn-prim ' + pfx + 'btn-new-mt';
+
+        var br_1 = document.createElement("br");
+        var br_2 = document.createElement("br");
+        var br_3 = document.createElement("br");
+        var br_4 = document.createElement("br");
+        var br_5 = document.createElement("br");
+        var br_6 = document.createElement("br");
+        container.appendChild(label_key);
+        container.appendChild(br_1);
+        container.appendChild(tb_key);
+        container.appendChild(br_2);
+        container.appendChild(br_3);
+        container.appendChild(label_value);
+        container.appendChild(br_4);
+        container.appendChild(tb_value);
+        container.appendChild(br_5);
+        container.appendChild(br_6);
+        container.appendChild(btnImp);
+
+        btnImp.onclick = function () {
+            var kVal = tb_key.value;
+            var vVal = "{{ " + tb_value.value + " }}";
+
+            // todo: Saving the merge tag
+            alert("New merge tag -  " + kVal + ": " + vVal + " is saved!");
+
+            editor.Modal.close();
+        };
+    },
+    tglPointers: function tglPointers(editor, v) {},
+    run: function run(editor, sender) {
+        console.log("logging the editor in return block");
+        console.log(editor);
+        console.log("logging the sender in return block");
+        console.log(sender);
+
+        var md = editor.Modal;
+
+        md.setTitle('Add new iteration'); // 'Add new merge tag'
+
+        var modalContent = md.getContentEl(); // The container
+
+        md.setContent('');
+        var container = document.createElement("div");
+        md.setContent(container);
+        md.open();
+        sender && sender.set('active', 0);
+    },
+    stop: function stop(editor, sender) {}
+};
+
+/***/ }),
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43060,10 +43773,10 @@ module.exports = {
  */
 module.exports = function () {
   var c = {},
-      defaults = __webpack_require__(207),
-      Blocks = __webpack_require__(208),
-      BlockCategories = __webpack_require__(210),
-      BlocksView = __webpack_require__(211);
+      defaults = __webpack_require__(214),
+      Blocks = __webpack_require__(215),
+      BlockCategories = __webpack_require__(217),
+      BlocksView = __webpack_require__(218);
   var blocks, blocksVisible, blocksView;
   var categories = [];
 
@@ -43083,10 +43796,13 @@ module.exports = function () {
      * @private
      */
     init: function init(config) {
+      console.log("init method in index.js");
       c = config || {};
       var em = c.em;
 
       for (var name in defaults) {
+        console.log("index.js in block manager");
+        console.log(name);
         if (!(name in c)) {
           c[name] = defaults[name];
         }
@@ -43254,7 +43970,10 @@ module.exports = function () {
      * blockManager.render();
      */
     render: function render(blocks) {
+      console.log("render in block manager");
+      console.log(blocks);
       var toRender = blocks || this.getAll().models;
+      console.log(toRender);
 
       if (!blocksView.rendered) {
         blocksView.render();
@@ -43267,7 +43986,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 207 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43275,35 +43994,99 @@ module.exports = function () {
 
 module.exports = {
 
-  blocks: [],
+  blocks: [
+  // Collection Iterations
+  {
+    id: 'payment-details',
+    category: 'Iterations',
+    label: 'Payment Details',
+    // The `id` will tell the service what data will replace the merge fields
+    content: '<span contenteditable="false" id="payment"><div>\n    {% for payment in paymentDetails %}\n        <div>{{ payment.date }}</div>\n        <div>{{ payment.account }}</div>\n        <div>{{ payment.ref }}</div>\n        {% else %}\n        <p> No payment details available against the account number. </p>\n    {% endfor %}\n    </div></span>',
+    attributes: { class: 'gjs-fonts gjs-f-text' }
+  },
+  // Un-Editable Blocks
+  {
+    id: 'unEditableText',
+    label: 'Un-Editable',
+    category: 'Un-Editable Blocks',
+    content: '<div><span contenteditable="false">If there are any mistakes or changes required to the above please \n      contact us as soon as possible on</span><span> {{CALLCENTRENUMBER}} </span><span contenteditable="false">\n      and quote your reference which is </span><span>{{CUSTOMERREF}}</span><span contenteditable="false">\n      . You can also contact us via our website at </span><span>{{OURWEBSITE}}</span><span contenteditable="false"> \n      particularly if you should have a change of address or contact phone numbers during the term of your contract.</span></div>',
+    attributes: { class: 'gjs-fonts gjs-f-text' }
+  },
+  // Default Blocks
+  {
+    id: 'sect100',
+    category: 'Basic',
+    label: '1 Section',
+    attributes: { class: 'gjs-fonts gjs-f-b1' },
+    content: '<table>\n        <tr>\n          <td></td>\n        </tr>\n        </table>'
+  }, {
+    id: 'sect50',
+    category: 'Basic',
+    label: '1/2 Section',
+    content: '<table>\n        <tr>\n          <td style="width: 50%"></td>\n          <td style="width: 50%"></td>\n        </tr>\n        </table>',
+    attributes: { class: 'gjs-fonts gjs-f-b1' }
+  }, {
+    id: 'sect30',
+    label: '1/3 Section',
+    category: 'Basic',
+    attributes: { class: 'gjs-fonts gjs-f-b3' },
+    content: '<table>\n        <tr>\n          <td style="width: 33.3333%"></td>\n          <td style="width: 33.3333%"></td>\n          <td style="width: 33.3333%"></td>\n        </tr>\n        </table>'
+  }, {
+    id: 'text',
+    label: 'Text',
+    category: 'Basic',
+    attributes: { class: 'gjs-fonts gjs-f-text' },
+    content: {
+      type: 'text',
+      content: 'Insert your text here',
+      style: { padding: '10px' },
+      activeOnRender: 1
+    }
+  }, {
+    id: 'text-sect',
+    label: 'Text Section',
+    category: 'Basic',
+    content: '<h1 class="heading">Insert title here</h1><p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>',
+    attributes: { class: 'gjs-fonts gjs-f-h1p' }
+  }, {
+    id: 'image',
+    label: 'Image',
+    category: 'Basic',
+    attributes: { class: 'gjs-fonts gjs-f-image' },
+    content: {
+      type: 'image',
+      style: { color: 'black' },
+      activeOnRender: 1
+    }
+  }],
 
   appendTo: ''
 
 };
 
 /***/ }),
-/* 208 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var Block = __webpack_require__(209);
+var Block = __webpack_require__(216);
 
 module.exports = Backbone.Collection.extend({
   model: Block
 });
 
 /***/ }),
-/* 209 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var Backbone = __webpack_require__(0);
-var Category = __webpack_require__(57);
+var Category = __webpack_require__(58);
 
 module.exports = Backbone.Model.extend({
 
@@ -43331,7 +44114,7 @@ module.exports = Backbone.Model.extend({
 });
 
 /***/ }),
-/* 210 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43340,19 +44123,19 @@ module.exports = Backbone.Model.extend({
 var Backbone = __webpack_require__(0);
 
 module.exports = Backbone.Collection.extend({
-  model: __webpack_require__(57)
+  model: __webpack_require__(58)
 });
 
 /***/ }),
-/* 211 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(_) {
 
 var Backbone = __webpack_require__(0);
-var BlockView = __webpack_require__(212);
-var CategoryView = __webpack_require__(213);
+var BlockView = __webpack_require__(219);
+var CategoryView = __webpack_require__(220);
 
 module.exports = Backbone.View.extend({
   initialize: function initialize(opts, config) {
@@ -43535,7 +44318,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 212 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43609,7 +44392,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 213 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43686,7 +44469,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 214 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -43703,7 +44486,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 (function (factory) {
 	if (true) {
 		// AMD support
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(215)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(1), __webpack_require__(222)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -44528,7 +45311,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 215 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Backbone.js 1.2.1
@@ -46409,7 +47192,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
-/* 216 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46492,7 +47275,7 @@ module.exports = function (_ref) {
     };
     /*
     const CashEvent = function(node, eventName, namespaces, delegate, originalCallback, runOnce) {
-       const eventCache = getData(node,'_cashEvents') || setData(node, '_cashEvents', {});
+        const eventCache = getData(node,'_cashEvents') || setData(node, '_cashEvents', {});
       const remove = function(c, namespace){
         if ( c && originalCallback !== c ) { return; }
         if ( namespace && this.namespaces.indexOf(namespace) < 0 ) { return; }
@@ -46502,24 +47285,24 @@ module.exports = function (_ref) {
         var t = this;
         if (delegate) {
           t = e.target;
-           while (t && !matches(t, delegate)) {
+            while (t && !matches(t, delegate)) {
             if (t === this) {
               return (t = false);
             }
             t = t.parentNode;
           }
         }
-         if (t) {
+          if (t) {
           originalCallback.call(t, e, e.data);
           if ( runOnce ) { remove(); }
         }
-       };
-       this.remove = remove;
+        };
+        this.remove = remove;
       this.namespaces = namespaces;
-       node.addEventListener(eventName, callback);
-       eventCache[eventName] = eventCache[eventName] || [];
+        node.addEventListener(eventName, callback);
+        eventCache[eventName] = eventCache[eventName] || [];
       eventCache[eventName].push(this);
-       return this;
+        return this;
     }
     */
 
@@ -46752,7 +47535,7 @@ module.exports = function (_ref) {
 };
 
 /***/ }),
-/* 217 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46800,7 +47583,7 @@ module.exports = Backbone.View.extend({
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 218 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46809,7 +47592,7 @@ module.exports = Backbone.View.extend({
 module.exports = function (config) {
 
   var c = config || {},
-      defaults = __webpack_require__(219);
+      defaults = __webpack_require__(226);
 
   // Set default options
   for (var name in defaults) {
@@ -46868,14 +47651,14 @@ module.exports = function (config) {
 };
 
 /***/ }),
-/* 219 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = {
-  plugins: []
+  plugins: ['iterations-manager']
 };
 
 /***/ })

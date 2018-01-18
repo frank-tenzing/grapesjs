@@ -1,5 +1,7 @@
 const $ = Backbone.$;
 const fileSaver = require("file-saver");
+// SHA1 hash for file naming (versioning)
+const sha1 = require("js-sha1");
 
 module.exports = {
 
@@ -17,11 +19,14 @@ module.exports = {
       this.htmlEditor = oHtmlEd.el;
       this.cssEditor = oCsslEd.el;
       const $editors = $(`<div class="${pfx}export-dl"></div>`);
+
       // Build the export button
       let htmlContent = editor.getHtml();
       let cssContent = editor.getCss();
       const exportBtn = this.buildButton("Export", htmlContent, cssContent);
+
       $editors.append(oHtmlEd.$el).append(oCsslEd.$el).append(exportBtn);
+
       this.$editors = $editors;
     }
 
@@ -37,6 +42,12 @@ module.exports = {
     modal && modal.close();
   },
 
+  /**
+   * 
+   * @param {*} codeName 
+   * @param {*} theme 
+   * @param {*} label 
+   */
   buildEditor(codeName, theme, label) {
     const input = document.createElement('textarea');
     !this.codeMirror && (this.codeMirror = this.cm.getViewer('CodeMirror'));
@@ -58,6 +69,23 @@ module.exports = {
     return { el, $el };
   },
 
+  /**
+   * ClientName-UsePurpose-Date
+   * @param {*} clientName 
+   * @param {*} usePurpose 
+   */
+  getFileName(clientName, usePurpose) {
+    let currentDate = new Date();
+    let salt = clientName + "-" + usePurpose + "-" + currentDate;
+    return sha1(salt);
+  },
+
+  /**
+   * 
+   * @param {*} label 
+   * @param {*} htmlContent 
+   * @param {*} cssContent 
+   */
   buildButton(label, htmlContent, cssContent) {
     let pfx = editor.getConfig().stylePrefix;
     let modal = editor.Modal;
@@ -68,7 +96,8 @@ module.exports = {
     btn.className = pfx + 'btn-prim ' + pfx + 'btn-export';
     btn.onclick = () => {
       try {
-        var fileName = "page.txt";
+        // Naming the file with version
+        var fileName = "CityFitness-Invoice-" + this.getFileName("CityFitness", "Invoice") + ".html";
         var blobData = new Blob([code], { type: "text/plain;charset=utf-8" });
 
         if (typeof window.navigator.msSaveBlob !== 'undefined') {
@@ -81,7 +110,7 @@ module.exports = {
         console.log("Download failed!");
         console.log("Exception: ", err);
       }
-
+      alert("Template: " + fileName + " is saved for further approval!");
       modal.close();
     }
     return btn;

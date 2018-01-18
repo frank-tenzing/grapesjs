@@ -42,14 +42,14 @@ const defActions = {
     },
     result: (rte) => rte.exec('strikeThrough')
   },
-  olist: {
+  /* olist: {
     name: 'olist',
     icon: '&#35;',
     attributes: {
       style: 'font-size:1.4rem;padding:0 4px 2px;',
       title: 'Ordered List'
     },
-    result: (rte) => rte.exec('insertOrderedList')
+    result: (rte) => rte.exec('olist')
   },
   ulist: {
     name: 'ulist',
@@ -58,8 +58,8 @@ const defActions = {
       style: 'font-size:1.4rem;padding:0 4px 2px;',
       title: 'Unordered List'
     },
-    result: (rte) => rte.exec('insertUnorderedList')
-  },
+    result: (rte) => rte.exec('ulist')
+  }, 
   line: {
     name: 'line',
     icon: '&#8213;',
@@ -69,7 +69,7 @@ const defActions = {
       title: 'Horizontal Line'
     },
     result: (rte) => rte.exec('insertHorizontalRule')
-  },
+  }, 
   link: {
     icon: `<span>&supdsub;</span>`,
     name: 'link',
@@ -78,7 +78,7 @@ const defActions = {
       title: 'Link',
     },
     result: (rte) => rte.insertHTML(`<a class="link" href="">${rte.selection()}</a>`)
-  },
+  }, */
   mergefields: {
     icon: `<select>
 		          <option value="" disabled>- {{Merge Fields}} -</option>
@@ -101,7 +101,7 @@ const defActions = {
     result: (rte, action) => rte.insertHTML(action.btn.firstChild.value),
     update: (rte, action) => { action.btn.firstChild.value = ""; }
   }
-}
+} 
 
 export default class RichTextEditor {
 
@@ -175,6 +175,8 @@ export default class RichTextEditor {
       // doc.queryCommandValue(name) != 'false'
       if (doc.queryCommandState(name)) {
         btn.className += ` ${active}`;
+      } else {
+        
       }
 
       update && update(this, action);

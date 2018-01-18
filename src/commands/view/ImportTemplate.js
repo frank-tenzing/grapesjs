@@ -26,7 +26,7 @@ module.exports = {
       this.$editors = $editors;
     }
 
-    modal.setTitle("Please choose a E-mail template");
+    modal.setTitle("Please choose a E-mail template (Only approved templates are visible in the dialog): ");
     modal.setContent(this.$editors);
     modal.open();
   },
