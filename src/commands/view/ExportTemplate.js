@@ -76,7 +76,7 @@ module.exports = {
    */
   getFileName(clientName, usePurpose) {
     let currentDate = new Date();
-    let salt = clientName + "-" + usePurpose + "-" + currentDate;
+    let salt = usePurpose + "-" + clientName + "-" + currentDate;
     return sha1(salt);
   },
 
@@ -97,7 +97,7 @@ module.exports = {
     btn.onclick = () => {
       try {
         // Naming the file with version
-        var fileName = "CityFitness-Invoice-" + this.getFileName("CityFitness", "Invoice") + ".html";
+        var fileName = "Invoice-CityFitness-" + this.getFileName("CityFitness", "Invoice") + ".html";
         var blobData = new Blob([code], { type: "text/plain;charset=utf-8" });
 
         if (typeof window.navigator.msSaveBlob !== 'undefined') {
