@@ -7,15 +7,26 @@ module.exports = {
       category: 'Iterations',
       label: 'Payment Details',
       // The `id` will tell the service what data will replace the merge fields
-      content: `<span contenteditable="false" id="payment"><div>
-    {% for payment in paymentDetails %}
-        <div>{{ payment.date }}</div>
-        <div>{{ payment.account }}</div>
-        <div>{{ payment.ref }}</div>
-        {% else %}
-        <p> No payment details available against the account number. </p>
-    {% endfor %}
-    </div></span>`,
+      /*   content: `<span contenteditable="false" id="payment"><div>
+      {% for payment in paymentDetails %}
+          <div>{{ payment.date }}</div>
+          <div>{{ payment.account }}</div>
+          <div>{{ payment.ref }}</div>
+          {% else %}
+          <p> No payment details available against the account number. </p>
+      {% endfor %}
+      </div></span>`, */
+      content: `<div align=center>
+    <div style="display: none;">{% block paymentdetails %}</div>
+        <div style="display: none;">{% autoescape false %}</div>
+            {{ PaymentDetails }}
+            <div class="sample-data">The following data is sample of collection iteration only</div>
+            <div class="sample-data">Mocked data 1</div>
+            <div class="sample-data">Mocked data 2</div>
+            <div class="sample-data">Mocked data 3</div>
+        <div style="display: none;">{% endautoescape %}</div>
+    <div style="display: none;">{% endblock %}</div>
+</div>`,
       attributes: { class: 'gjs-fonts gjs-f-text' }
     },
     // Un-Editable Blocks
@@ -23,11 +34,15 @@ module.exports = {
       id: 'unEditableText',
       label: 'Un-Editable',
       category: 'Un-Editable Blocks',
-      content: `<div><span contenteditable="false">If there are any mistakes or changes required to the above please 
-      contact us as soon as possible on</span><span> {{CALLCENTRENUMBER}} </span><span contenteditable="false">
-      and quote your reference which is </span><span>{{CUSTOMERREF}}</span><span contenteditable="false">
-      . You can also contact us via our website at </span><span>{{OURWEBSITE}}</span><span contenteditable="false"> 
-      particularly if you should have a change of address or contact phone numbers during the term of your contract.</span></div>`,
+      content: `<div><span data-gjs-editable="false" data-gjs-removable="false">If there are any 
+      mistakes or changes required to the above please contact us as soon as possible on</span>
+      <span data-gjs-removable="false"> {{CALLCENTRENUMBER}} </span>
+      <span data-gjs-editable="false" data-gjs-removable="false">and quote your reference which is </span>
+      <span data-gjs-removable="false">{{CUSTOMERREF}}</span>
+      <span data-gjs-editable="false" data-gjs-removable="false">. You can also contact us via 
+      our website at </span><span data-gjs-removable="false">{{OURWEBSITE}}</span>
+      <span data-gjs-editable="false" data-gjs-removable="false"> particularly if you should 
+      have a change of address or contact phone numbers during the term of your contract.</span></div>`,
       attributes: { class: 'gjs-fonts gjs-f-text' },
     },
     // Default Blocks
