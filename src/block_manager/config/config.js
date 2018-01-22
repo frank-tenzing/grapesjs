@@ -1,3 +1,22 @@
+var listItem =
+  `<table class="list-item">
+        <tr>
+          <td class="list-item-cell">
+            <table class="list-item-content">
+              <tr class="list-item-row">
+                <td class="list-cell-left">
+                  <img class="list-item-image" src="http://placehold.it/150x150/78c5d6/fff/" alt="Image"/>
+                </td>
+                <td class="list-cell-right">
+                  <h1 class="card-title">Title here</h1>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>`;
+
 module.exports = {
 
   blocks: [
@@ -53,9 +72,9 @@ module.exports = {
       category: 'Basic',
       label: '1 Section',
       attributes: { class: 'gjs-fonts gjs-f-b1' },
-      content: `<table>
+      content: `<table style="height: 150px;margin: 0 auto 10px auto;padding: 5px 5px 5px 5px;width: 100%;">
         <tr>
-          <td></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;"></td>
         </tr>
         </table>`,
     },
@@ -63,26 +82,55 @@ module.exports = {
       id: 'sect50',
       category: 'Basic',
       label: '1/2 Section',
-      content: `<table>
+      attributes: { class: 'gjs-fonts gjs-f-b2' },
+      content: `<table style="height: 150px;margin: 0 auto 10px auto;padding: 5px 5px 5px 5px;width: 100%;">
         <tr>
-          <td style="width: 50%"></td>
-          <td style="width: 50%"></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;width: 50%;"></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;width: 50%;"></td>
         </tr>
         </table>`,
-      attributes: { class: 'gjs-fonts gjs-f-b1' },
     },
     {
       id: 'sect30',
       label: '1/3 Section',
       category: 'Basic',
       attributes: { class: 'gjs-fonts gjs-f-b3' },
-      content: `<table>
+      content: `<table style="height: 150px;margin: 0 auto 10px auto;padding: 5px 5px 5px 5px;width: 100%;">
         <tr>
-          <td style="width: 33.3333%"></td>
-          <td style="width: 33.3333%"></td>
-          <td style="width: 33.3333%"></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;width: 33.3333%;"></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;width: 33.3333%;"></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;width: 33.3333%;"></td>
         </tr>
         </table>`,
+    },
+    {
+      id: 'sect37',
+      label: '3/7 Section',
+      category: 'Basic',
+      attributes: { class: 'gjs-fonts gjs-f-b37' },
+      content: `<table style="height: 150px;margin: 0 auto 10px auto;padding: 5px 5px 5px 5px;width: 100%;">
+        <tr>
+          <td style="padding: 0;margin: 0;vertical-align: top;width:30%;"></td>
+          <td style="padding: 0;margin: 0;vertical-align: top;width:70%;"></td>
+        </tr>
+        </table>`,
+    },
+    {
+      id: 'divider',
+      label: 'Divider',
+      category: 'Basic',
+      attributes: { class: 'gjs-fonts gjs-f-divider' },
+      content: `<table style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+        <tr>
+          <td class="divider"></td>
+        </tr>
+      </table>
+      <style>
+      .divider {
+        background-color: rgba(0, 0, 0, 0.1);
+        height: 1px;
+      }
+      </style>`,
     },
     {
       id: 'text',
@@ -100,8 +148,8 @@ module.exports = {
       id: 'text-sect',
       label: 'Text Section',
       category: 'Basic',
+      attributes: { class: 'gjs-fonts gjs-f-h1p' },
       content: '<h1 class="heading">Insert title here</h1><p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>',
-      attributes: { class: 'gjs-fonts gjs-f-h1p' }
     },
     {
       id: 'image',
@@ -113,7 +161,14 @@ module.exports = {
         style: { color: 'black' },
         activeOnRender: 1
       },
-    }
+    },
+    {
+      id: 'listItems',
+      label: 'List Items',
+      category: 'Basic',
+      attributes: { class: 'fa fa-th-list' },
+      content: listItem + listItem,
+    },
   ],
 
   appendTo: '',
