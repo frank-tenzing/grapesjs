@@ -63,7 +63,7 @@ module.exports = {
       attributes: { title: 'View and export template code' },
     }, {
       id: impt,
-      className: 'fa fa-folder-open-o',
+      className: 'fa fa-folder-open',
       command: impt,
       attributes: { title: 'Import template' },
     }, {
