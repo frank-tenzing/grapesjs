@@ -34,13 +34,13 @@ module.exports = {
       attributes: { title: 'View components' },
     }, {
       id: nmt,
-      className: 'fa fa-pencil',
+      className: 'fa fa-plus-square-o',
       command: nmt,
       context: nmt,
       attributes: { title: 'New Merge Tag' },
     }, {
       id: nci,
-      className: 'fa fa-pencil',
+      className: 'fa fa-plus',
       command: nci,
       context: nci,
       attributes: { title: 'New Iteration' },
@@ -63,7 +63,7 @@ module.exports = {
       attributes: { title: 'View and export template code' },
     }, {
       id: impt,
-      className: 'fa fa-upload',
+      className: 'fa fa-folder-open',
       command: impt,
       attributes: { title: 'Import template' },
     }, {
