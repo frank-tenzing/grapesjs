@@ -2,6 +2,7 @@ const $ = Backbone.$;
 const fileSaver = require("file-saver");
 // SHA1 hash for file naming (versioning)
 const sha1 = require("js-sha1");
+const juice = require("juice");
 
 module.exports = {
 
@@ -21,9 +22,7 @@ module.exports = {
       const $editors = $(`<div class="${pfx}export-dl"></div>`);
 
       // Build the export button
-      let htmlContent = editor.getHtml();
-      let cssContent = editor.getCss();
-      const exportBtn = this.buildButton("Export", htmlContent, cssContent);
+      const exportBtn = this.buildButton("Export", editor);
 
       $editors.append(oHtmlEd.$el).append(oCsslEd.$el).append(exportBtn);
 
@@ -83,12 +82,13 @@ module.exports = {
   /**
    * 
    * @param {*} label 
-   * @param {*} htmlContent 
-   * @param {*} cssContent 
+   * @param {*} editor 
    */
-  buildButton(label, htmlContent, cssContent) {
+  buildButton(label, editor) {
     let pfx = editor.getConfig().stylePrefix;
     let modal = editor.Modal;
+    let htmlContent = editor.getHtml();
+    let cssContent = editor.getCss();
     let code = htmlContent + "\n" + "<style>\n" + cssContent + "\n</style>";
 
     let btn = document.createElement("button"); // <button class="gjs-btn-prim gjs-btn-import">Add the merge tag</button>
