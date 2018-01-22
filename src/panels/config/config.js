@@ -58,12 +58,12 @@ module.exports = {
       attributes: { title: 'Fullscreen' },
     }, {
       id: expt,
-      className: 'fa fa-download',
+      className: 'fa fa-floppy-o',
       command: expt,
       attributes: { title: 'View and export template code' },
     }, {
       id: impt,
-      className: 'fa fa-folder-open',
+      className: 'fa fa-folder-open-o',
       command: impt,
       attributes: { title: 'Import template' },
     }, {
