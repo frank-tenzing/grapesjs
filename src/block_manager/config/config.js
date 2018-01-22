@@ -17,6 +17,19 @@ var listItem =
         </tr>
       </table>`;
 
+/* let cellStyle = {
+  padding: 0,
+  margin: 0,
+  'vertical-align': 'top',
+};
+
+let tableStyle = {
+  height: '150px',
+  margin: '0 auto 10px auto',
+  padding: '5px 5px 5px 5px',
+  width: '100%'
+}; */
+
 module.exports = {
 
   blocks: [
