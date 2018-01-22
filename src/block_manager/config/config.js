@@ -34,15 +34,17 @@ module.exports = {
       id: 'unEditableText',
       label: 'Un-Editable',
       category: 'Un-Editable Blocks',
-      content: `<div><span data-gjs-editable="false" data-gjs-removable="false">If there are any 
-      mistakes or changes required to the above please contact us as soon as possible on</span>
-      <span data-gjs-removable="false"> {{CALLCENTRENUMBER}} </span>
+      content: `<div><span data-gjs-editable="false" data-gjs-removable="false">
+      If there are any mistakes or changes required to the above please contact us 
+      as soon as possible on</span><span data-gjs-removable="false"> {{CALLCENTRENUMBER}} </span>
       <span data-gjs-editable="false" data-gjs-removable="false">and quote your reference which is </span>
       <span data-gjs-removable="false">{{CUSTOMERREF}}</span>
-      <span data-gjs-editable="false" data-gjs-removable="false">. You can also contact us via 
-      our website at </span><span data-gjs-removable="false">{{OURWEBSITE}}</span>
-      <span data-gjs-editable="false" data-gjs-removable="false"> particularly if you should 
-      have a change of address or contact phone numbers during the term of your contract.</span></div>`,
+      <span data-gjs-editable="false" data-gjs-removable="false">
+      . You can also contact us via our website at </span>
+      <span data-gjs-removable="false">{{OURWEBSITE}}</span>
+      <span data-gjs-editable="false" data-gjs-removable="false"> 
+      particularly if you should have a change of address or contact 
+      phone numbers during the term of your contract.</span></div>`,
       attributes: { class: 'gjs-fonts gjs-f-text' },
     },
     // Default Blocks
