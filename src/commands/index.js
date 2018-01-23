@@ -118,13 +118,6 @@ module.exports = () => {
       defaultCommands['new-merge-tag'] = require('./view/NewMergeTag');
       defaultCommands['new-iteration'] = require('./view/NewIteration');
 
-      defaultCommands['gjs-get-inlined-html'] = {
-        run(editor) {
-          const tmpl = editor.getHtml() + `<style>${editor.getCss()}</style>`;
-          return juice(tmpl);
-        }
-      }
-
       defaultCommands['tlb-delete'] = {
         run(ed) {
           var sel = ed.getSelected();
