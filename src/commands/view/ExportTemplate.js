@@ -1,8 +1,6 @@
 const $ = Backbone.$;
 // File saver
 const fileSaver = require("file-saver");
-// Archive the html and css files into zip 
-const JSZip = require("jszip");
 // Inline css properties into the style attribute
 const juice = require("juice");
 // SHA1 hash for file naming (versioning)
@@ -15,6 +13,9 @@ module.exports = {
 
     const config = editor.getConfig();
     const pfx = config.stylePrefix;
+
+    const preHtml = '<!doctype html><html lang="en"><head><meta charset="utf-8"></head><body>';
+    const postHtml = '</body><html>';
 
     let codeViewer = editor.CodeManager.getViewer('CodeMirror').clone();
     let container = document.createElement("div");
@@ -42,8 +43,9 @@ module.exports = {
       viewer.setOption('lineWrapping', 1);
     }
     md.setContent(container);
-    const tmpl = editor.getHtml() + `<style>${editor.getCss()}</style>`;
-    codeViewer.setContent(juice(tmpl));
+    let tmpl = editor.getHtml() + `<style>${editor.getCss()}</style>`;
+    tmpl = preHtml + juice(tmpl) + postHtml;
+    codeViewer.setContent(tmpl);
     md.open();
     viewer.refresh();
     sender && sender.set && sender.set('active', 0);
