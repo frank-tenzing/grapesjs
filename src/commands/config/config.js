@@ -20,4 +20,6 @@ module.exports = {
 
   // Minimum width (in px) of component on creation
   minComponentW: 50,
+
+  modalTitleExport: 'Export template',
 };

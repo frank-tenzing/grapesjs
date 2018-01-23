@@ -177,6 +177,5 @@ module.exports = {
 
 
   // Texts
-
   textViewCode: 'Code',
 };
