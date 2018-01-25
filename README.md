@@ -1,4 +1,4 @@
-Grapes.js is built with Backbone
+Grapes.js is built with Backbone as well as some knowledge of node.js
 
 1. git clone https://github.com/frank-tenzing/tnz-email-editor.git
 
